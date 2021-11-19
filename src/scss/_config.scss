@@ -3,26 +3,18 @@
 
 $base-size: 1rem;
 $base-scale: 1.333;
-// $sizes: (
-//     '-2': div(get($sizes, -1), $base-scale),
-//     '-1': div(get($sizes, 0), $base-scale),
-//     '0': $base-size, 
-//     '1': get($sizes, 0) * $base-scale,
-//     '2': get($sizes, 1) * $base-scale,
-//     '3': get($sizes, 2) * $base-scale,
-//     '4': get($sizes, 3) * $base-scale,
-// );
+
 $sizes: ();
 
 $prev-scale: $base-size;
 @for $i from 1 to 16 {
     $prev-scale: $prev-scale * $base-scale;
-    @debug map.set($sizes, $i * 100, $prev-scale);
+    $sizes: map.set($sizes, $i * 100, $prev-scale);
 }
 $prev-scale: $base-size;
 @for $i from -1 to -10 {
     $prev-scale: math.div($prev-scale, $base-scale);
-    @debug map.set($sizes, $i * 100, $prev-scale);
+    $sizes: map.set($sizes, $i * 100, $prev-scale);
 }
 
 $base-font: sans-serif;
