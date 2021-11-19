@@ -1,0 +1,7 @@
+@use "config" as config;
+
+@each $size in config.$sizes {
+    .icon-#{$size} {
+      font-size: $size;
+    }
+  }
