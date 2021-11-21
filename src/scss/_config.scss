@@ -1,8 +1,8 @@
 @use "sass:map";
+@use "sass:color";
 @use "mixins/scale";
 @use "mixins/a11y-color.scss" as a11y;
 @use "mixins/color-scale" as cs;
-@use "mixins/dark-mode" as dm;
 
 $base-size: 1rem;
 $base-scale: 1.333;
@@ -48,40 +48,8 @@ $light-colors: (
 );
 
 $dark-colors: (
-    'primary': hsl(347, 83%, 56%)
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'dark': $color-dark,
+    'light': $color-light,
 );
-
-:root {
-    --flow-space: #{map.get($scale, 100)};
-    --color-mode: "light";
-
-    --color-bg: #{map.get($greys, '300')};
-    --color-fg: #{map.get($light-colors, "dark")};
-
-    --color-light: #{map.get($light-colors, "light")};
-    --color-dark: #{map.get($light-colors, "dark")};
-
-    --color-primary: #{map.get($light-colors, "primary")};
-    --color-on-primary: #{map.get($light-colors, "on-primary")};
-    --color-secondary: #{map.get($light-colors, "secondary")};
-    --color-on-secondary: #{map.get($light-colors, "on-secondary")};
-
-    --color-selection: #{map.get($light-colors, "secondary")};
-    --color-on-selection: #{map.get($light-colors, "on-secondary")};
-}
-
-// @include dm.dark-mode() {
-//     --color-bg: #{map.get($light-colors, "dark")};
-//     --color-fg: #{map.get($light-colors, "light")};
-
-//     --color-light: #{map.get($light-colors, "light")};
-//     --color-dark: #{map.get($light-colors, "dark")};
-
-//     --color-primary: #{map.get($light-colors, "primary")};
-//     --color-on-primary: #{map.get($light-colors, "on-primary")};
-//     --color-secondary: #{map.get($light-colors, "secondary")};
-//     --color-on-secondary: #{map.get($light-colors, "on-secondary")};
-
-//     --color-selection: #{map.get($light-colors, "secondary")};
-//     --color-on-selection: #{map.get($light-colors, "on-secondary")};
-// } ;

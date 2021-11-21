@@ -1,3 +1,19 @@
-.navbar {
+@use "sass:map";
+@use "../config" as config;
 
+.navbar {
+    font-size: config.$font-size-medium;
+    font-weight: 500;
+    a {
+        text-decoration: none;
+        &:hover {
+            color: var(--color-secondary-hover);
+            text-decoration: none;
+        }
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        padding: map.get(config.$scale, 0);
+    }
 }

@@ -2,6 +2,7 @@
 @use "../config" as config;
 
 .footer {
+    background-color: var(--color-grey);
     margin-top: auto;
     padding: map.get(config.$scale, 100);
     &__inner {

@@ -1,5 +1,35 @@
 <nav class="navbar">
-    <div class="navbar_inner container">
-        <a class="brand" href="/">W </a>
+    <div class="navbar__inner container">
+        <a class="brand" href="/">
+            <span class="material-icons"> web </span>
+        </a>
+        <ul class="nav">
+            <li class="nav__item">
+                <a class="nav__link" href="index.html">Hem</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link active" href="#">Navigation</a>
+            </li>
+            <li class="nav__item dropdown">
+                <a class="nav__link--dropdown-toggle" href="#" role="button"
+                    >Dropdown</a
+                >
+                <ul class="nav dropdown__content">
+                    <li class="dropdown__item">
+                        <a class="nav__link" href="#">Link</a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a class="nav__link" href="#">Link</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </nav>
+
+<script>
+    const toggle = document.querySelector('.nav__link--dropdown-toggle');
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+</script>

@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../config" as config;
+
+.nav {
+    display: flex;
+    &__item {
+        padding-left: map.get(config.$scale, 100);
+    }
+}
