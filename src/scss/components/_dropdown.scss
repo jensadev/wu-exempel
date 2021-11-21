@@ -9,19 +9,18 @@
         position: absolute;
         min-width: map.get(config.$scale, 800);
         background-color: var(--color-bg);
-        padding: map.get(config.$scale, -200);
         box-shadow: 0px 8px 16px 0px var(--color-shadow);
     }
-
+    
     &:hover &__content {
         display: flex;
         flex-direction: column;
     }
-
+    
     &__item {
-        padding: map.get(config.$scale, -500) 0;
+        padding: map.get(config.$scale, -200);
         &:hover {
-            text-decoration: underline;
+            background-color: var(--color-grey);
         }
     }
 }

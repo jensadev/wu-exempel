@@ -87,6 +87,7 @@ select {
   --color-light: #f0f0f0;
   --color-dark: #212121;
   --color-primary: #ec325a;
+  --color-primary-hover: rgba(236, 50, 90, 0.8);
   --color-on-primary: #9f2a43;
   --color-secondary: #4a0080;
   --color-secondary-hover: rgba(74, 0, 128, 0.8);
@@ -211,9 +212,14 @@ h3 {
 }
 
 .brand {
-  font-weight: 900;
-  font-size: 1.776889rem;
   text-decoration: none;
+}
+.brand img, .brand span {
+  vertical-align: middle;
+}
+.brand .material-icons {
+  font-size: 1.776889rem;
+  line-height: inherit;
 }
 
 .navbar {
@@ -224,20 +230,64 @@ h3 {
   text-decoration: none;
 }
 .navbar a:hover {
-  color: var(--color-secondary-hover);
+  color: var(--color-primary-hover);
   text-decoration: none;
+}
+.navbar__toggle {
+  color: var(--color-primary);
+  border: none;
+  background-color: transparent;
+}
+.navbar__toggle:hover {
+  color: var(--color-primary-hover);
+}
+.navbar__toggle .material-icons {
+  font-size: 1.776889rem;
+  line-height: inherit;
+}
+@media (min-width: 48rem) {
+  .navbar__toggle {
+    display: none;
+  }
+}
+@media (max-width: 48rem) {
+  .navbar__collapse {
+    display: none;
+  }
+}
+.navbar__collapse-show {
+  display: block;
+  width: 100%;
 }
 .navbar__inner {
   display: flex;
   align-items: center;
   padding: 1rem;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+@media (max-width: 48rem) {
+  .navbar__inner {
+    justify-content: space-between;
+  }
 }
 
 .nav {
   display: flex;
+  flex-direction: row;
+}
+@media (max-width: 48rem) {
+  .nav {
+    flex-direction: column;
+  }
 }
 .nav__item {
   padding-left: 1.333rem;
+}
+@media (max-width: 48rem) {
+  .nav__item {
+    padding-left: 0;
+  }
 }
 
 .dropdown {
@@ -249,7 +299,6 @@ h3 {
   position: absolute;
   min-width: 9.9687612606rem;
   background-color: var(--color-bg);
-  padding: 0.5627813555rem;
   box-shadow: 0px 8px 16px 0px var(--color-shadow);
 }
 .dropdown:hover .dropdown__content {
@@ -257,10 +306,10 @@ h3 {
   flex-direction: column;
 }
 .dropdown__item {
-  padding: 0.237601541rem 0;
+  padding: 0.5627813555rem;
 }
 .dropdown__item:hover {
-  text-decoration: underline;
+  background-color: var(--color-grey);
 }
 
 body {

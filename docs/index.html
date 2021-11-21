@@ -25,27 +25,32 @@
         <a class="brand" href="/">
             <span class="material-icons"> web </span>
         </a>
-        <ul class="nav">
-            <li class="nav__item">
-                <a class="nav__link" href="index.html">Hem</a>
-            </li>
-            <li class="nav__item">
-                <a class="nav__link active" href="#">Navigation</a>
-            </li>
-            <li class="nav__item dropdown">
-                <a class="nav__link--dropdown-toggle" href="#" role="button"
-                    >Dropdown</a
-                >
-                <ul class="nav dropdown__content">
-                    <li class="dropdown__item">
-                        <a class="nav__link" href="#">Link</a>
-                    </li>
-                    <li class="dropdown__item">
-                        <a class="nav__link" href="#">Link</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
+        <button class="navbar__toggle">
+            <span class="material-icons"> menu </span>
+        </button>
+        <div class="navbar__collapse">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a class="nav__link" href="index.html">Hem</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link active" href="#">Navigation</a>
+                </li>
+                <li class="nav__item dropdown">
+                    <a class="nav__link--dropdown-toggle" href="#" role="button"
+                        >Dropdown</a
+                    >
+                    <ul class="nav dropdown__content">
+                        <li class="dropdown__item">
+                            <a class="nav__link" href="#">Link</a>
+                        </li>
+                        <li class="dropdown__item">
+                            <a class="nav__link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
@@ -55,6 +60,7 @@
         e.preventDefault();
     });
 </script>
+<script defer src="/js/hamburger.js"></script>
 
 <main id="main-content" class="page container">
     <header class="page__hero flow">
