@@ -87,7 +87,7 @@ select {
   --color-light: #f0f0f0;
   --color-dark: #212121;
   --color-primary: #ec325a;
-  --color-on-primary: ;
+  --color-on-primary: #9f2a43;
   --color-secondary: #4a0080;
   --color-secondary-hover: rgba(74, 0, 128, 0.8);
   --color-on-secondary: ;
@@ -276,18 +276,14 @@ img {
 
 a {
   text-decoration: none;
-  color: var(--color-secondary);
+  color: var(--color-on-primary);
 }
 a:visited {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 a:hover {
   text-decoration: underline;
-  color: var(--color-secondary);
-}
-
-p > a {
-  text-decoration: underline;
+  color: var(--color-primary);
 }
 
 ::selection {

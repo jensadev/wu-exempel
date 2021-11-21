@@ -42,6 +42,7 @@ $greys: cs.create($color-dark);
 
 $light-colors: (
     'primary': $color-primary,
+    'on-primary': a11y.a11y-color($color-primary, $color-light, 'AAA'),
     'secondary': $color-secondary,
     'dark': $color-dark,
     'light': $color-light,
