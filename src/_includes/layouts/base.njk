@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    {% block head %}
-    <link rel="stylesheet" href="{{ '/css/main.css' }}">
-    {% endblock %}
-</head>
-<body>
-    {{ content | safe }}
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ site.title }}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700;900&display=swap"
+            rel="stylesheet" />
+        {% block head %}
+        <link rel="stylesheet" href="{{ '/css/main.css' }}" />
+        {% endblock %}
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        {{ content | safe }}
+    </body>
 </html>

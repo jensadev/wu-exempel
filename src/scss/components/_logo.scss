@@ -1,0 +1,28 @@
+// @use "sass:map";
+// @use "../config";
+// .logo {
+//     &__heading {
+//         position: relative;
+//         text-transform: uppercase;
+//         font-size: map.get(config.$scale, 500);
+//         z-index: 100;
+//         display: flex;
+//         align-items: center;
+//         font-weight: 900;
+//         letter-spacing: map.get(config.$scale, -400);
+//         &:hover {
+//             color: map.get(config.$colors, 'primary');
+//         }
+//     }
+//     &__two {
+//         position: relative;
+//         z-index: -1;
+//         margin-left: - map.get(config.$scale, 300);
+//     }
+//     &__one, &__two {
+        
+//         font-size: map.get(config.$scale, 700);
+//         color: map.get(config.$colors, 'primary');
+//         line-height: 1;
+//     }
+// }

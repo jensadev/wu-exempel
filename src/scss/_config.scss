@@ -1,28 +1,87 @@
 @use "sass:map";
-@use "sass:math";
+@use "mixins/scale";
+@use "mixins/a11y-color.scss" as a11y;
+@use "mixins/color-scale" as cs;
+@use "mixins/dark-mode" as dm;
 
 $base-size: 1rem;
 $base-scale: 1.333;
 
-$scale: (
-    0: $base-size,
-);
+$scale: scale.calcScale($base-size, $base-scale);
 
-$prev-scale: $base-size;
-@for $i from 1 to 16 {
-    $prev-scale: $prev-scale * $base-scale;
-    $scale: map.set($scale, $i * 100, $prev-scale);
-}
-$prev-scale: $base-size;
-@for $i from -1 to -10 {
-    $prev-scale: math.div($prev-scale, $base-scale);
-    $scale: map.set($scale, $i * 100, $prev-scale);
-}
+$font-size-small: map.get($scale, -100);
+$font-size-base: map.get($scale, 0);
+$font-size-medium: map.get($scale, 100);
+$font-size-large: map.get($scale, 200);
+$font-size-xlarge: map.get($scale, 300);
 
-$base-font: sans-serif;
+$font-family-sans-serif: "Work Sans", sans-serif;
+$font-family-serif: serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+
+$body-font-family: $font-family-sans-serif;
+$body-font-weight: 400;
+$body-line-height: 1.5;
+
+$heading-font-family: $font-family-sans-serif;
+$heading-font-weight: 700;
+$heading-line-height: $base-scale;
 
 $breakpoints: (
-    sm: 576px,
-    md: 768px,
-    lg: 992px
+    sm: 36rem,
+    md: 48rem,
+    lg: 62rem,
 );
+
+$color-primary: hsl(347, 83%, 56%);
+$color-secondary: hsl(275, 100%, 25%);
+$color-dark: hsl(0, 0%, 13%);
+$color-light: hsl(0, 0%, 94%);
+
+$greys: cs.create($color-dark);
+
+$light-colors: (
+    'primary': $color-primary,
+    'secondary': $color-secondary,
+    'dark': $color-dark,
+    'light': $color-light,
+);
+
+$dark-colors: (
+    'primary': hsl(347, 83%, 56%)
+);
+
+:root {
+    --flow-space: #{map.get($scale, 100)};
+    --color-mode: "light";
+
+    --color-bg: #{map.get($greys, '300')};
+    --color-fg: #{map.get($light-colors, "dark")};
+
+    --color-light: #{map.get($light-colors, "light")};
+    --color-dark: #{map.get($light-colors, "dark")};
+
+    --color-primary: #{map.get($light-colors, "primary")};
+    --color-on-primary: #{map.get($light-colors, "on-primary")};
+    --color-secondary: #{map.get($light-colors, "secondary")};
+    --color-on-secondary: #{map.get($light-colors, "on-secondary")};
+
+    --color-selection: #{map.get($light-colors, "secondary")};
+    --color-on-selection: #{map.get($light-colors, "on-secondary")};
+}
+
+// @include dm.dark-mode() {
+//     --color-bg: #{map.get($light-colors, "dark")};
+//     --color-fg: #{map.get($light-colors, "light")};
+
+//     --color-light: #{map.get($light-colors, "light")};
+//     --color-dark: #{map.get($light-colors, "dark")};
+
+//     --color-primary: #{map.get($light-colors, "primary")};
+//     --color-on-primary: #{map.get($light-colors, "on-primary")};
+//     --color-secondary: #{map.get($light-colors, "secondary")};
+//     --color-on-secondary: #{map.get($light-colors, "on-secondary")};
+
+//     --color-selection: #{map.get($light-colors, "secondary")};
+//     --color-on-selection: #{map.get($light-colors, "on-secondary")};
+// } ;

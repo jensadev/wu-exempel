@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "../config" as config;
+
+.brand {
+    font-weight: 900;
+    font-size: map.get(config.$scale, 200);
+    text-decoration: none;
+}

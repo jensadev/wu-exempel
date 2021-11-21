@@ -3,9 +3,12 @@ title: Exempel och övningar
 layout: 'layouts/base.njk'
 ---
 
-<main class="page container">
-    <header class="page__hero">
-        <h1>{{ site.title }}</h1>
+{% include 'components/navbar.njk' %}
+<main id="main-content" class="page container">
+    <header class="page__hero flow">
+        <h1 class="logo__heading">
+            {{ site.title }}
+        </h1>
         <h2>{{ title }}</h2>
         <p class="lead">
             Det här repot samlar ett antal exempel över vanliga webbkomponenter
@@ -28,7 +31,7 @@ layout: 'layouts/base.njk'
             server.
         </p>
     </header>
-    <section class="page__content">
+    <section class="page__content flow">
         <p>
             En del av sidorna innehåller instruktioner för hur du går tillväga
             för att koda och återskapa dem, men oavsett det så förväntas du
@@ -46,3 +49,4 @@ layout: 'layouts/base.njk'
         </p>
     </section>
 </main>
+{% include 'components/footer.njk' %}

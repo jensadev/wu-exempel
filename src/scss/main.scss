@@ -1,8 +1,47 @@
-@use "config" as config;
+@use "sass:map";
+@use "reset";
+@use "config";
 @use "utils/container";
+@use "utils/flow";
+@use "utils/list";
+@use "utils/skip-link";
+@use "utils/stretched-link";
+@use "utils/visually-hidden";
+@use "type";
+@use "components/footer";
+@use "components/page";
+@use "components/brand";
 
-// @each $key, $value in config.$scale {
-//     .icon-#{$key} {
-//       font-size: $value;
-//     }
-//   }
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    &:visited {
+        color: var(--color-secondary);
+    }
+    &:hover {
+        text-decoration: underline;
+        color: var(--color-secondary);
+    }
+}
+
+
+::selection {
+    background-color: var(--color-selection);
+    color: var(--color-on-selection);
+}
+
+::-moz-selection {
+    background-color: var(--color-selection);
+    color: var(--color-on-selection);
+}
