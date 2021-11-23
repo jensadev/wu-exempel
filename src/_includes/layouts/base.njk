@@ -19,6 +19,8 @@
     </head>
     <body>
         <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        {% include 'components/navbar.njk' %}
         {{ content | safe }}
+        {% include 'components/footer.njk' %}
     </body>
 </html>
