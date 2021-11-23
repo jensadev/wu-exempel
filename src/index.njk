@@ -1,9 +1,8 @@
 ---
 title: Exempel och övningar
-layout: 'layouts/base.njk'
+layout: layouts/base.njk
 ---
 
-{% include 'components/navbar.njk' %}
 <main id="main-content" class="page container">
     <header class="page__hero flow">
         <h1 class="logo__heading">
@@ -14,39 +13,75 @@ layout: 'layouts/base.njk'
             Det här repot samlar ett antal exempel över vanliga webbkomponenter
             och visar hur du kan koda dem. Arbeta dig igenom dina
             intresseområden och gör tillhörande övningar, eller hitta det du
-            behöver och använd det. Repot är ett work in progress och hittar du
-            något fel eller förbättring så gör gärna en pull request. Om du
-            saknar något eller hittar fel, så skapa en
-            <a href="https://github.com/jensnti/wu-ovningar/issues">issue</a>
-            på GitHub och berätta vad.
+            behöver och använd det.
         </p>
-        <p>
-            Innan du kör igång rekommenderar jag att du installerar VSCode
-            extensionen
+        <p class="lead">
+            Repot är ett work in progress och hittar du något som är fel kan du
+            skapa ett
             <a
-                href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
-                >Live server</a
-            >, så att du förenklar ditt arbetsflöde. Installera, ladda om code
-            och högerklicka sedan på html-dokument och välj Open with live
-            server.
+                href="{{ pgk.bugs.url }}"
+                target="_blank"
+                rel="noopener"
+                >issue</a
+            >. Om du förbättrar eller skapar något nytt till sidan så skapa en
+            <a
+                href="{{ pgk.repository.url }}/pulls"
+                target="_blank"
+                rel="noopener"
+                >pull request</a
+            >.
         </p>
     </header>
     <section class="page__content flow">
         <p>
+            För att köra de exempel som finns på den här sidan kan du antingen
+            bygga alltihopa med
+            <a href="https://www.npmjs.com/" target="_blank" rel="noopener"
+                >npm</a
+            >, kolla på sidan i din webbläsare (som du gör nu) eller klona
+            <a
+                href="{{ pgk.repository.url }}"
+                target="_blank"
+                rel="noopener"
+                >repot</a
+            >
+            och öppna exempel med
+            <a
+                href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                rel="noopener"
+                >Live server</a
+            >
+            från
+            <a
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noopener"
+                >Visual studio code</a
+            >.
+        </p>
+        <p>
             En del av sidorna innehåller instruktioner för hur du går tillväga
             för att koda och återskapa dem, men oavsett det så förväntas du
             inspektera och undersöka källkoden på sidorna. Så öppna
-            utvecklarverktygen i webbläsaren (F12) och se till att Inspektera
-            dokumentet.
+            utvecklarverktygen i webbläsaren (F12) och se till att
+            <em>Inspektera dokumentet</em>.
         </p>
         <p>
             Alla sidorna innehåller en eller flera övningar för dig att arbeta
             med.
         </p>
         <p>
-            Validera din <a href="https://validator.nu/">HTML</a> och
-            <a href="https://jigsaw.w3.org/css-validator/">CSS</a>.
+            Validera din
+            <a href="https://validator.nu/" target="_blank" rel="noopener"
+                >HTML</a
+            >
+            och
+            <a
+                href="https://jigsaw.w3.org/css-validator/"
+                target="_blank"
+                rel="noopener"
+                >CSS</a
+            >.
         </p>
     </section>
 </main>
-{% include 'components/footer.njk' %}
