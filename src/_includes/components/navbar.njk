@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" aria-label="Primary">
     <div class="navbar__inner container">
         <a class="brand" href="/">
             <span class="material-icons"> web </span>
@@ -9,22 +9,48 @@
         <div class="navbar__collapse">
             <ul class="nav">
                 <li class="nav__item">
-                    <a class="nav__link" href="index.html">Hem</a>
+                    <a
+                        class="
+                            nav__link{%
+                            if
+                            page.url
+                            ===
+                            '/'
+                            %}
+                            active{%
+                            endif
+                            %}
+                        "
+                        href="index.html"
+                        >Hem</a
+                    >
                 </li>
-                <li class="nav__item">
+                <!-- <li class="nav__item">
                     <a class="nav__link active" href="#">Navigation</a>
-                </li>
+                </li> -->
                 <li class="nav__item dropdown">
                     <a class="nav__link--dropdown-toggle" href="#" role="button"
-                        >Dropdown</a
+                        >Exempel</a
                     >
                     <ul class="nav dropdown__content">
+                        {% for item in collections.pages %}
                         <li class="dropdown__item">
-                            <a class="nav__link" href="#">Link</a>
+                            <a class="nav__link{%
+                                if
+                                page.url
+                                ===
+                                item.url
+                                %}
+                                active{%
+                                endif
+                                %}" href="{{ item.url }}">{{
+                                item.data.title
+                            }}</a>
                         </li>
-                        <li class="dropdown__item">
+                        {% endfor %}
+                        <!-- <li class="dropdown__item">
                             <a class="nav__link" href="#">Link</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
             </ul>
