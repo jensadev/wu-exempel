@@ -3,6 +3,14 @@ title: Navigation
 layout: layouts/base.njk
 ---
 
+{% block head %}
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+{% endblock %}
 <main id="main-content" class="page container">
     <header class="page__hero flow">
         <h1 class="logo__heading">
@@ -11,5 +19,107 @@ layout: layouts/base.njk
     </header>
     <section class="page__content flow">
         <p>Skrot</p>
+        {% include "examples/nav-example.njk" %}
+        <!-- Nunjucks Template -->
+{% highlight "html" %}
+<nav class="navbar-example">
+    <a class="brand" href="#">Brand</a>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html">Hem</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Navigation</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#">Dropdown</a>
+            <ul class="nav dropdown-content">
+                <li class="dropdown-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="dropdown-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endhighlight %}
+{% highlight "css" %}
+.navbar-example {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-grey);
+    font-size: 1.25rem;
+}
+.nav {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.nav a {
+    text-decoration: none;
+}
+.nav-item {
+    padding-right: 1rem;
+}
+.nav-item:first-child {
+    padding-left: 1rem;
+}
+.nav-link {
+    color: var(--color-secondary);
+}
+.nav-link:hover {
+    color: var(--color-dark);
+}
+.brand {
+    white-space: nowrap;
+}
+.active {
+    color: var(--color-dark);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10rem;
+    box-shadow: 0px 8px 16px 0px var(--color-shadow);
+    background-color: var(--color-light);
+    padding: 0.5rem;
+    z-index: 1010;
+}
+.dropdown-item {
+    padding: 0.25rem 0.5rem;
+}
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 768px) {
+    .navbar-example {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-example .nav {
+        flex-direction: column;
+    }
+    .nav-item:first-child {
+        padding-left: 0rem;
+    }
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+{% endhighlight %}
     </section>
 </main>
