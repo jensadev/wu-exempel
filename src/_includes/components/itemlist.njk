@@ -1,0 +1,8 @@
+<h2>Innehåll</h2>
+<ul>
+    {% for item in collections.pages %}
+    <li>
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
