@@ -4,7 +4,7 @@
 .footer {
     background-color: var(--color-grey);
     margin-top: auto;
-    padding: map.get(config.$scale, 100);
+    padding: map.get(config.$scale, 200) map.get(config.$scale, 0);
     &__inner {
         font-size: config.$font-size-small;
     }

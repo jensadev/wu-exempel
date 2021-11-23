@@ -1,5 +1,18 @@
+@use "sass:map";
+@use "../config" as config;
+
 .page {
-    &__hero {
-        
+    width: 100%;
+    h1 {
+        text-transform: uppercase;
+        font-size: map.get(config.$scale, 400);
+        word-break: break-all;
+        hyphens: auto;
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+    &__content {
+        margin-top: map.get(config.$scale, 100);
     }
 }
