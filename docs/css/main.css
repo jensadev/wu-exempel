@@ -200,7 +200,7 @@ h3 {
 .footer {
   background-color: var(--color-grey);
   margin-top: auto;
-  padding: 1.333rem;
+  padding: 1.776889rem 1rem;
 }
 .footer__inner {
   font-size: 0.7501875469rem;
@@ -209,6 +209,22 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.page {
+  width: 100%;
+}
+.page h1 {
+  text-transform: uppercase;
+  font-size: 3.1573345183rem;
+  word-break: break-all;
+  hyphens: auto;
+}
+.page h1:hover {
+  color: var(--color-primary);
+}
+.page__content {
+  margin-top: 1.333rem;
 }
 
 .brand {
@@ -228,6 +244,7 @@ h3 {
 }
 .navbar a {
   text-decoration: none;
+  color: var(--color-on-primary);
 }
 .navbar a:hover {
   color: var(--color-primary-hover);
@@ -262,7 +279,7 @@ h3 {
 .navbar__inner {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1.333rem 1rem;
   justify-content: left;
   flex-wrap: wrap;
 }
@@ -309,7 +326,7 @@ h3 {
   padding: 0.5627813555rem;
 }
 .dropdown__item:hover {
-  background-color: var(--color-grey);
+  box-shadow: 0px 2px 4px 0px var(--color-shadow);
 }
 
 body {
@@ -325,14 +342,16 @@ img {
 
 a {
   text-decoration: none;
-  color: var(--color-on-primary);
-}
-a:visited {
-  color: var(--color-primary);
+  color: var(--color-dark);
+  font-weight: 500;
 }
 a:hover {
   text-decoration: underline;
   color: var(--color-primary);
+}
+
+.active {
+  color: var(--color-dark) !important;
 }
 
 ::selection {
