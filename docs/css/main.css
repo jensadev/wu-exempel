@@ -95,6 +95,7 @@ select {
   --color-selection: #4a0080;
   --color-on-selection: ;
   --color-grey: #c7c7c7;
+  --color-grey-light: white;
   --color-grey-dark: #636363;
   --color-shadow: rgba(33, 33, 33, 0.2);
 }

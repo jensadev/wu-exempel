@@ -1,58 +1,61 @@
-.navbar-example {
+.playground .navbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 1rem;
-  background-color: var(--color-grey);
+  background-color: var(--color-light);
   font-size: 1.25rem;
 }
 @media (max-width: 768px) {
-  .navbar-example {
+  .playground .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
 }
-.navbar-example .nav {
+.playground .nav {
   list-style: none;
   display: flex;
   flex-direction: row;
 }
 @media (max-width: 768px) {
-  .navbar-example .nav {
+  .playground .nav {
     flex-direction: column;
   }
 }
-.navbar-example .nav a {
+.playground .nav a {
   text-decoration: none;
 }
-.navbar-example .nav-item {
+.playground .nav-item {
   padding-right: 1rem;
 }
-.navbar-example .nav-item:first-child {
+.playground .nav-item:first-child {
   padding-left: 1rem;
 }
 @media (max-width: 768px) {
-  .navbar-example .nav-item:first-child {
+  .playground .nav-item:first-child {
     padding-left: 0rem;
   }
 }
-.navbar-example .brand {
+.playground .brand {
   white-space: nowrap;
 }
-.navbar-example .nav-link {
+.playground .nav-link,
+.playground .brand {
   color: var(--color-secondary);
 }
-.navbar-example .nav-link:hover {
+.playground .nav-link:hover,
+.playground .brand:hover {
+  text-decoration: none;
   color: var(--color-dark);
 }
-.navbar-example .active {
+.playground .active {
   color: var(--color-dark);
 }
-.navbar-example .dropdown {
+.playground .dropdown {
   position: relative;
   display: inline-block;
 }
-.navbar-example .dropdown-content {
+.playground .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -62,14 +65,14 @@
   padding: 0.5rem;
   z-index: 1010;
 }
-.navbar-example .dropdown-item {
+.playground .dropdown-item {
   padding: 0.25rem 0.5rem;
 }
-.navbar-example .dropdown:hover .dropdown-content {
+.playground .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
 }
-.navbar-example .fixed-top {
+.playground .fixed-top {
   position: fixed;
   top: 0;
   right: 0;
