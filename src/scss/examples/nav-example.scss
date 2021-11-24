@@ -1,13 +1,15 @@
-.navbar-example {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--color-grey);
-    font-size: 1.25rem;
-    @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
+.playground {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--color-light);
+        font-size: 1.25rem;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
     .nav {
         list-style: none;
@@ -32,10 +34,13 @@
     .brand {
         white-space: nowrap;
     }
-    .nav-link {
+    .nav-link,
+    .brand {
         color: var(--color-secondary);
     }
-    .nav-link:hover {
+    .nav-link:hover,
+    .brand:hover {
+        text-decoration: none;
         color: var(--color-dark);
     }
     .active {

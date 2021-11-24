@@ -24,6 +24,7 @@
     --color-on-selection: #{map.get(config.$light-colors, "on-secondary")};
 
     --color-grey: #{map.get(config.$greys, '400')};
+    --color-grey-light: #{map.get(config.$greys, '200')};
     --color-grey-dark: #{map.get(config.$greys, '700')};
 
     --color-shadow:  #{rgba(map.get(config.$light-colors, "dark"), .2)};

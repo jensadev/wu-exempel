@@ -1,28 +1,14 @@
 ---
 title: Navigation
-layout: layouts/base.njk
+layout: layouts/example.njk
 ---
 
-{% block head %}
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
-    integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
-{% endblock %}
-<main id="main-content" class="page container">
-    <header class="page__hero flow">
-        <h1 class="logo__heading">
-            {{ title }}
-        </h1>
-    </header>
-    <section class="page__content flow">
-        <p>Skrot</p>
-        {% include "examples/nav-example.njk" %}
-        <!-- Nunjucks Template -->
+<p>Skrot</p>
+<div class="playground">
+    {% include "examples/nav-example.njk" %}
+</div>
 {% highlight "html" %}
-<nav class="navbar-example">
+<nav class="navbar">
     <a class="brand" href="#">Brand</a>
     <ul class="nav">
         <li class="nav-item">
@@ -46,12 +32,18 @@ layout: layouts/base.njk
 </nav>
 {% endhighlight %}
 {% highlight "css" %}
-.navbar-example {
+:root {
+    --color-light: #f0f0f0;
+    --color-dark: #212121;
+    --color-shadow: rgba(33, 33, 33, 0.2);
+    --color-secondary:#4a0080;
+}
+.navbar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 1rem;
-    background-color: var(--color-grey);
+    background-color: var(--color-light);
     font-size: 1.25rem;
 }
 .nav {
@@ -72,6 +64,7 @@ layout: layouts/base.njk
     color: var(--color-secondary);
 }
 .nav-link:hover {
+    text-decoration: none;
     color: var(--color-dark);
 }
 .brand {
@@ -113,6 +106,9 @@ layout: layouts/base.njk
         padding-left: 0rem;
     }
 }
+{% endhighlight %}
+    <p>För en navbar som är sticky så kan följande klass läggas till.</p>
+{% highlight "css" %}
 .fixed-top {
     position: fixed;
     top: 0;
@@ -121,5 +117,3 @@ layout: layouts/base.njk
     z-index: 1000;
 }
 {% endhighlight %}
-    </section>
-</main>
