@@ -214,6 +214,7 @@ h3 {
 
 .page {
   width: 100%;
+  margin-bottom: 3.1573345183rem;
 }
 .page h1 {
   text-transform: uppercase;
@@ -328,6 +329,10 @@ h3 {
 }
 .dropdown__item:hover {
   box-shadow: 0px 2px 4px 0px var(--color-shadow);
+}
+
+.playground {
+  width: 100%;
 }
 
 body {

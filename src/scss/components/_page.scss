@@ -3,6 +3,7 @@
 
 .page {
     width: 100%;
+    margin-bottom: map.get(config.$scale, 400);
     h1 {
         text-transform: uppercase;
         font-size: map.get(config.$scale, 400);
