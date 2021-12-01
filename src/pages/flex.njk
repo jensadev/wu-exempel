@@ -1,0 +1,142 @@
+---
+title: Flexbox
+layout: layouts/example.njk
+---
+<link rel="stylesheet" href="{{ '/css/examples/flex-example.css' }}">
+<h2>{{ title }}</h2>
+
+<p>Samtliga exempel följer denna grundläggande html konstruktion.</p>
+<p>css klasser används sedan för att lägga till och ta bort stilar, css egenskaper.</p>
+{% highlight "html" %}
+<div class="flex-container">
+    <div>
+        <h1>1</h1>
+    </div>
+    <div>
+        <h1>2</h1>
+    </div>
+    <div>
+        <h1>3</h1>
+    </div>
+</div>
+{% endhighlight %}
+<p>Värt att nämna är att i varje underliggande div, de med h1 element och siffror så används flex för att centrera texten.</p>
+{% highlight "css" %}
+.flex-container__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+{% endhighlight %}
+<h2>Exempel</h2>
+<p>Divar utan flexbox.</p>
+<div class="playground">
+    <div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<p>Divar med flexbox. Flex-direction är default, vilket är row så den staplar innehållet på rad. Fast storlek, 100pixlar.</p>
+{% highlight "css" %}
+.flex-container {
+    display: flex;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--100">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Divar med flexbox. Justify-content för att placera boxarna på raden. 
+    Flex-direction är default, vilket är row så den staplar innehållet på rad. 
+    Fast storlek, 100pixlar.</p>
+<p>Det finns ett stort antal val för justify-content, öppna utvecklarverktygen i 
+    webbläsaren (F12) och testa. Kom ihåg att både justify-content och align-items 
+är beroende av vilken flex-direction som används.</p>
+{% highlight "css" %}
+.flex-container--space-between {
+    justify-content: space-between;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--space-between">
+        <div class="flex-container__item flex-container__item--100">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--100">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Divar med flexbox. Storleken är 100% width.</p>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Divar med flexbox. Direction är satt till colummn, annars är koden som ovan. Storleken är 100% width.</p>
+<p>Testa att flippa direction till row med utvecklarverktygen (F12).</p>
+{% highlight "css" %}
+.flex-container--column {
+    flex-direction: column;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--column">
+        <div class="flex-container__item">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item>
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Divar med flexbox. Flex wrap (default är nowrap)..</p>
+{% highlight "css" %}
+.flex-container--wrap {
+    flex-wrap: wrap;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--wrap">
+        <div class="flex-container__item">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
