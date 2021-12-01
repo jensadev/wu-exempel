@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Webbutveckling 1-2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet" />
+            <link rel="stylesheet" href="/wu-exempel/css/main.css" />
+        
+        
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        <nav class="navbar" aria-label="Primary">
+    <div class="navbar__inner container">
+        <a class="brand" href="/wu-exempel/">
+            <span class="material-icons"> web </span>
+        </a>
+        <button class="navbar__toggle">
+            <span class="material-icons"> menu </span>
+        </button>
+        <div class="navbar__collapse">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a
+                        class="
+                            nav__link
+                        "
+                        href="/wu-exempel/index.html"
+                        >Hem</a
+                    >
+                </li>
+                <li class="nav__item dropdown">
+                    <a class="nav__link--dropdown-toggle" href="#" role="button"
+                        >Exempel</a
+                    >
+                    <ul class="nav dropdown__content">
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                    active
+                                "
+                                href="/wu-exempel/knappar.html"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/flexbox.html"
+                                >Flexbox</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/visa-och-dolj.html"
+                                >Visa och dölj</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/media-queries.html"
+                                >Media queries</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/navigation.html"
+                                >Navigation</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/hamburgermeny.html"
+                                >Hamburgermeny</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/darkmode.html"
+                                >Darkmode</a
+                            >
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const toggle = document.querySelector('.nav__link--dropdown-toggle');
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+</script>
+<script defer src="/wu-exempel/js/hamburger.js"></script>
+
+        
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+
+<main id="main-content" class="page container">
+    <header class="page__hero flow">
+        <h1 class="page__heading bleed">
+            <div class="container">
+                Knappar
+            </div>
+        </h1>
+    </header>
+    <section class="page__content flow">
+        <link rel="stylesheet" href="/wu-exempel/css/examples/button-example.css">
+<script defer src="/wu-exempel/js/examples/button-example.js"></script>
+<p>Knappar eller stilar som ser ut som knappar. En knapp ska inte ha funktionen 
+    av en länk, då använder du en länk, men inget hindrar dig från att ge länken
+en knapps stil. </p>
+<div class="playground">
+    <ul class="btns">
+    <li>
+        <button>Standard button</button>
+    </li>
+    <li>
+        <button class="btn">Styled button</button>
+    </li>
+    <li>
+        <button class="btn bg-primary">Primary button</button>
+    </li>
+    <li>
+        <button class="btn bg-secondary">Secondary button</button>
+    </li>
+    <li>
+        <button class="btn btn-rounded">Rounded button</button>
+    </li>
+    <li>
+        <button class="btn btn-animated">Animated button</button>
+    </li>
+    <li>
+        <button class="btn" id="js-button">JS button</button>
+    </li>
+    <li>
+        <button class="btn" id="counter-button">Clicked: 0</button>
+    </li>
+    <li><a class="btn" id="a-button" href="#">Link button</a></li>
+</ul>
+</div>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">></span></span>Standard button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Styled button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn bg-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn bg-secondary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Secondary button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-rounded<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Rounded button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-animated<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Animated button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>JS button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>counter-button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Clicked: 0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>a-button<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link button<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre>
+<p>css för knappar</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--color-light</span><span class="token punctuation">:</span> #f0f0f0<span class="token punctuation">;</span><br>    <span class="token property">--color-dark</span><span class="token punctuation">:</span> #212121<span class="token punctuation">;</span><br>    <span class="token property">--color-primary</span><span class="token punctuation">:</span> #ec325a<span class="token punctuation">;</span><br>    <span class="token property">--color-secondary</span><span class="token punctuation">:</span>#4a0080<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.btn</span> <span class="token punctuation">{</span><br>    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>    <span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token property">margin</span><span class="token punctuation">:</span> 0 0.25rem<span class="token punctuation">;</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 0.375rem 0.75rem<span class="token punctuation">;</span><br>    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid transparent<span class="token punctuation">;</span><br>    <span class="token property">transition</span><span class="token punctuation">:</span> color 0.15s ease-in-out<span class="token punctuation">,</span> background-color 0.15s ease-in-out<span class="token punctuation">,</span> border-color 0.15s ease-in-out<span class="token punctuation">,</span> box-shadow 0.15s ease-in-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.btn:hover</span> <span class="token punctuation">{</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.btn-rounded</span> <span class="token punctuation">{</span><br>    <span class="token property">border-radius</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.btn-animated</span> <span class="token punctuation">{</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">transition</span><span class="token punctuation">:</span> background 0.5s ease-in-out border 0.5s ease-in-out<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.btn-animated:hover</span> <span class="token punctuation">{</span><br>    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-dark<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.bg-primary</span> <span class="token punctuation">{</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-primary<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.bg-secondary</span> <span class="token punctuation">{</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-secondary<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+
+<p>Javascript för knappar</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">/*<br> * Vänta på att sidan har laddats.<br> * Läs mer, https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event<br> */</span><br>window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'page is fully loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token comment">// Hitta knappen i DOM-trädet och spara den i variabeln button.</span><br>    <span class="token comment">// Ett tips är att kunna och känna till vilka olika selectors vi kan använda.</span><br>    <span class="token comment">// Vad är en selector?</span><br>    <span class="token comment">// https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector</span><br>    <span class="token comment">// https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector</span><br>    <span class="token keyword">let</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Button clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">let</span> aBtn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#a-button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    aBtn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Link clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">let</span> counterBtn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#counter-button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">let</span> counter <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>    counterBtn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        counter <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span><br>        counterBtn<span class="token punctuation">.</span>textContent <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Clicked: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>counter<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><br>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Link clicked'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+    </section>
+</main>
+
+        <footer class="footer">
+    <div class="footer__inner container text-small">
+        <ul class="footer__list">
+            <li>
+                <a href="https://github.com/jensnti/wu-exempel" style="font-size: 0">
+                    <svg
+                        class="cat"
+                        height="32"
+                        viewBox="0 0 16 16"
+                        version="1.1"
+                        width="32"
+                        aria-hidden="true">
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg
+                    >GitHub repo</a
+                >
+            </li>
+            <li><a href="https://github.com/jensnti/wu-exempel/issues">Problem? GitHub issue</a></li>
+            <li><a href="#">Tillbaka till toppen</a></li>
+        </ul>
+    </div>
+</footer>
+
+    </body>
+</html>

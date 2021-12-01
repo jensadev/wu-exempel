@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Webbutveckling 1-2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet" />
+            <link rel="stylesheet" href="/wu-exempel/css/main.css" />
+        
+        
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        <nav class="navbar" aria-label="Primary">
+    <div class="navbar__inner container">
+        <a class="brand" href="/wu-exempel/">
+            <span class="material-icons"> web </span>
+        </a>
+        <button class="navbar__toggle">
+            <span class="material-icons"> menu </span>
+        </button>
+        <div class="navbar__collapse">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a
+                        class="
+                            nav__link
+                        "
+                        href="/wu-exempel/index.html"
+                        >Hem</a
+                    >
+                </li>
+                <li class="nav__item dropdown">
+                    <a class="nav__link--dropdown-toggle" href="#" role="button"
+                        >Exempel</a
+                    >
+                    <ul class="nav dropdown__content">
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/knappar.html"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                    active
+                                "
+                                href="/wu-exempel/flexbox.html"
+                                >Flexbox</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/visa-och-dolj.html"
+                                >Visa och dölj</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/media-queries.html"
+                                >Media queries</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/navigation.html"
+                                >Navigation</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/hamburgermeny.html"
+                                >Hamburgermeny</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/darkmode.html"
+                                >Darkmode</a
+                            >
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const toggle = document.querySelector('.nav__link--dropdown-toggle');
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+</script>
+<script defer src="/wu-exempel/js/hamburger.js"></script>
+
+        
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css"
+    integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+
+<main id="main-content" class="page container">
+    <header class="page__hero flow">
+        <h1 class="page__heading bleed">
+            <div class="container">
+                Flexbox
+            </div>
+        </h1>
+    </header>
+    <section class="page__content flow">
+        <link rel="stylesheet" href="/wu-exempel/css/examples/flex-example.css">
+<h2>Layoutens silvertejp</h2>
+<p>Samtliga exempel följer denna grundläggande html konstruktion.</p>
+<p>css klasser används sedan för att lägga till och ta bort stilar, css egenskaper.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Värt att nämna är att i varje underliggande div, de med h1 element och siffror
+     så används flex för att centrera texten.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container__item</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>  <span class="token punctuation">}</span></code></pre>
+<h3>Utan flexbox</h3>
+<p>Divar utan flexbox.</p>
+<div class="playground">
+    <div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Med flexbox default</h3>
+<p>Här är enbart display:flex satt, så det är standardinställningar. Flex-direction
+     är row som standard, så den placerar
+     innehållet på en rad (horizontell, row). Flex huvud-axel är alltså horizontell i detta exempel.</p>
+     <p>Elementens bredd (width) är, 20%.</p>
+     <p>Det här kan du använda när du vill att element ska placeras brevid varandra.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<h3>Justify-content</h3>
+<p> Justify-content för att placera boxarna på raden. 
+    Default är flex-start.</p>
+<p>Det finns ett stort antal val för justify-content, öppna utvecklarverktygen i 
+    webbläsaren (F12) och testa. Kom ihåg att både justify-content och align-items 
+är beroende av vilken flex-direction som används, alltså flex huvud-axel.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--end</span> <span class="token punctuation">{</span><br>    <span class="token property">justify-content</span><span class="token punctuation">:</span> flex-end<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--end">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--space-between</span> <span class="token punctuation">{</span><br>    <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--space-between">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Align-items</h3>
+<p>Flex huvud-axel är som standard horizontell, den andra axeln är då vertikal.
+    Align-items är för att placera elementen på axeln.</p>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Precis som för justify-content finns det ett stort antal val för align-items, öppna utvecklarverktygen i 
+    webbläsaren (F12) och testa. Kom ihåg att både justify-content och align-items 
+är beroende av vilken flex-direction som används, alltså flex huvud-axel.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--align-center</span> <span class="token punctuation">{</span><br>    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--align-center">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Flex-direction</h3>
+<p>Med flex direction kan vi ändra vilken riktning flex huvud-axel ska ha, 
+    row eller column. Standard är som tidigare nämnt column.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--row-reverse</span> <span class="token punctuation">{</span><br>    <span class="token property">flex-direction</span><span class="token punctuation">:</span> row-reverse<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--row-reverse">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Flex-direction är row som standard, ändrar vi den till column så staplas 
+    de underliggande elementen på varandra.</p>
+    <p>När du ändrar flex direction så byter justify-content och align-items plats.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--column</span> <span class="token punctuation">{</span><br>    <span class="token property">flex-direction</span><span class="token punctuation">:</span> column<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--column">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Flex-grow</h3>
+<p>Flex-grow bestämmer hur mycket plats ett element får ta av den container som
+    det ligger i. Standard inställningen är 0. Du kan observera denna funktionalitet 
+i alla tidigare exempel här på sidan.</p>
+<p>Kontrollera detta med flex-grow egenskapen. I det här exemplet så tar nu 
+    element 2 all plats som finns kvar efter att element 1 och 3 fått sin bredd 
+(width) som är 20%.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-item</span> <span class="token punctuation">{</span><br>    <span class="token property">flex-grow</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Med flex-grow: 1 på element 1 och 2 så delar dessa två element på den plats som finns 
+    kvar efter att element 3 tagit 20%.
+</p>
+<p>Med flex grown kan du alltså kontrollera vad som händer med den plats som blir över.</p>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<h3>Flex-wrap</h3>
+<p>Med flex-wrap kontrolleras om innehållet i containern ska byta rad, default 
+    är nowrap. Om du ändrar den till wrap så kommer elementen att byta rad när 
+    innehållet är större än containern. Det är alltså baserat på elementens
+bredd (width).</p>
+</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container--wrap</span> <span class="token punctuation">{</span><br>    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.flex-container__item--50</span> <span class="token punctuation">{</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--wrap">
+        <div class="flex-container__item flex-container__item--50">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--50">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--50">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Flex-gap</h3>
+<p>Alla dessa exempel är utan margin på element, just margin och padding kan
+    ställa till det eftersom ett elements storlek är baserat på box-modellen (om
+    du inte känner till den så läs på, viktigt!).
+</p>
+<p>Om du önskar en marginal mellan alla element i din flex container så kan du 
+    använda dig av flex-gap.
+</p>
+<p>Det går även utmärkt att använda tillsammans med flex-grow och de andra egenskaperna.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container</span> <span class="token punctuation">{</span><br>    <span class="token property">gap</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<div class="playground">
+    <div class="flex-container flex-container--center" style="gap: 1rem;">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<p>För att styra gap så kan du använda det på row eller column.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container</span> <span class="token punctuation">{</span><br>    <span class="token property">row-gap</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>    <span class="token property">column-gap</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+    </section>
+</main>
+
+        <footer class="footer">
+    <div class="footer__inner container text-small">
+        <ul class="footer__list">
+            <li>
+                <a href="https://github.com/jensnti/wu-exempel" style="font-size: 0">
+                    <svg
+                        class="cat"
+                        height="32"
+                        viewBox="0 0 16 16"
+                        version="1.1"
+                        width="32"
+                        aria-hidden="true">
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg
+                    >GitHub repo</a
+                >
+            </li>
+            <li><a href="https://github.com/jensnti/wu-exempel/issues">Problem? GitHub issue</a></li>
+            <li><a href="#">Tillbaka till toppen</a></li>
+        </ul>
+    </div>
+</footer>
+
+    </body>
+</html>
