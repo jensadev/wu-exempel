@@ -1,6 +1,6 @@
 <nav class="navbar" aria-label="Primary">
     <div class="navbar__inner container">
-        <a class="brand" href="/">
+        <a class="brand" href="{{ site.path }}/">
             <span class="material-icons"> web </span>
         </a>
         <button class="navbar__toggle">
@@ -25,9 +25,6 @@
                         >Hem</a
                     >
                 </li>
-                <!-- <li class="nav__item">
-                    <a class="nav__link active" href="#">Navigation</a>
-                </li> -->
                 <li class="nav__item dropdown">
                     <a class="nav__link--dropdown-toggle" href="#" role="button"
                         >Exempel</a
@@ -35,22 +32,23 @@
                     <ul class="nav dropdown__content">
                         {% for item in collections.pages %}
                         <li class="dropdown__item">
-                            <a class="nav__link{%
-                                if
-                                page.url
-                                ===
-                                item.url
-                                %}
-                                active{%
-                                endif
-                                %}" href="{{ item.url }}">{{
-                                item.data.title
-                            }}</a>
+                            <a
+                                class="
+                                    nav__link{%
+                                    if
+                                    page.url
+                                    ===
+                                    item.url
+                                    %}
+                                    active{%
+                                    endif
+                                    %}
+                                "
+                                href="{{ site.path + item.url }}"
+                                >{{ item.data.title }}</a
+                            >
                         </li>
                         {% endfor %}
-                        <!-- <li class="dropdown__item">
-                            <a class="nav__link" href="#">Link</a>
-                        </li> -->
                     </ul>
                 </li>
             </ul>
@@ -64,4 +62,4 @@
         e.preventDefault();
     });
 </script>
-<script defer src="/js/hamburger.js"></script>
+<script defer src="{{ site.path }}/js/hamburger.js"></script>

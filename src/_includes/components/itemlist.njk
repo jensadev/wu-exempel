@@ -2,7 +2,7 @@
 <ul>
     {% for item in collections.pages %}
     <li>
-        <a href="{{ item.url }}">{{ item.data.title }}</a>
+        <a href="{{ site.path + item.url }}">{{ item.data.title }}</a>
     </li>
     {% endfor %}
 </ul>

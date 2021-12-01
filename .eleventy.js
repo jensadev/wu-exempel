@@ -13,6 +13,9 @@ module.exports = (eleventyConfig) => {
         return collectionApi
             .getFilteredByGlob('src/pages/*.njk')
             .sort((a, b) => {
+                if (a.data.level && b.data.level) {
+                    return a.data.level - b.data.level;
+                }
                 return a.data.title.localeCompare(b.data.title);
             });
     });

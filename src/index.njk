@@ -1,5 +1,5 @@
 ---
-title: Exempel och övningar
+title: Webbutveckling 1-2
 layout: layouts/base.njk
 ---
 
@@ -10,6 +10,7 @@ layout: layouts/base.njk
                 {{ title }}
             </div>
         </h1>
+        <h2>Exempel och övningar</h2>
         <p class="lead">
             Det här repot samlar ett antal exempel över vanliga webbkomponenter
             och visar hur du kan koda dem. Arbeta dig igenom dina
@@ -19,11 +20,7 @@ layout: layouts/base.njk
         <p class="lead">
             Repot är ett work in progress och hittar du något som är fel kan du
             skapa ett
-            <a
-                href="{{ pgk.bugs.url }}"
-                target="_blank"
-                rel="noopener"
-                >issue</a
+            <a href="{{ pgk.bugs.url }}" target="_blank" rel="noopener">issue</a
             >. Om du förbättrar eller skapar något nytt till sidan så skapa en
             <a
                 href="{{ pgk.repository.url }}/pulls"
@@ -32,7 +29,10 @@ layout: layouts/base.njk
                 >pull request</a
             >.
         </p>
-        <p class="lead">Den här sidan är ett komplement till <a href="https://webbutveckling.jensa.xyz">Webbutveckling</a>.</p>
+        <p class="lead">
+            Den här sidan är ett komplement till kurswebben, 
+            <a href="https://webbutveckling.jensa.xyz">Webbutveckling.jensa.xyz</a>.
+        </p>
     </header>
     <section class="page__content flow">
         <p>
@@ -41,10 +41,7 @@ layout: layouts/base.njk
             <a href="https://www.npmjs.com/" target="_blank" rel="noopener"
                 >npm</a
             >, kolla på sidan i din webbläsare (som du gör nu) eller klona
-            <a
-                href="{{ pgk.repository.url }}"
-                target="_blank"
-                rel="noopener"
+            <a href="{{ pgk.repository.url }}" target="_blank" rel="noopener"
                 >repot</a
             >
             och öppna exempel med
@@ -87,15 +84,24 @@ layout: layouts/base.njk
         </p>
         {% include "components/itemlist.njk" %}
         <h2>Länkar och annat nyttigt</h2>
-        <p>Här finns det en del läsning kring viktiga koncept och delar av 
+        <p>
+            Här finns det en del läsning kring viktiga koncept och delar av
             kurserna webbutveckling. Det är bra material men inte på svenska.
         </p>
         <ul>
             <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">Box modellen</a>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
+                    target="_blank"
+                    >Box modellen</a
+                >
             </li>
             <li>
-                <a href="https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/" target="_blank">Semantiska element, fusklapp</a>
+                <a
+                    href="https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/"
+                    target="_blank"
+                    >Semantiska element, fusklapp</a
+                >
             </li>
         </ul>
     </section>
