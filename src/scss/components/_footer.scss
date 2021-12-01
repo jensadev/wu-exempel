@@ -2,9 +2,10 @@
 @use "../config" as config;
 
 .footer {
-    background-color: var(--color-grey);
+    color: var(--color-bg);
+    background-color: var(--color-fg);
     margin-top: auto;
-    padding: map.get(config.$scale, 200) map.get(config.$scale, 0);
+    padding: map.get(config.$scale, 400) map.get(config.$scale, 0);
     &__inner {
         font-size: config.$font-size-small;
     }
@@ -12,5 +13,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    a {
+        color: var(--color-bg);
+        background-color: var(--color-fg);
+        svg {
+            fill: var(--color-bg);
+            &:hover {
+                fill: var(--color-primary);
+            }
+        }
     }
 }

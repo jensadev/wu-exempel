@@ -4,23 +4,17 @@
 .navbar {
     font-size: config.$font-size-medium;
     font-weight: 500;
-    background-color: var(--color-light);
     a {
         text-decoration: none;
-        color: var(--color-on-primary);
+        color: var(--color-dark);
         &:hover {
-            color: var(--color-primary-hover);
+            color: var(--color-grey-dark);
             text-decoration: none;
         }
     }
     &__toggle {
-        color: var(--color-primary);
         border: none;
         background-color: transparent;
-
-        &:hover {
-            color: var(--color-primary-hover);
-        }
 
         .material-icons {
             font-size: map.get(config.$scale, 200);

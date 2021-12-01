@@ -4,6 +4,7 @@
 @use "variables";
 @use "utils/container";
 @use "utils/flow";
+@use "utils/bleed";
 @use "utils/list";
 @use "utils/skip-link";
 @use "utils/stretched-link";
@@ -22,6 +23,7 @@ body {
     flex-direction: column;
     background-color: var(--color-bg);
     color: var(--color-fg);
+    overflow-x: hidden;
 }
 
 img {
