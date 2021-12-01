@@ -5,10 +5,11 @@ layout: layouts/base.njk
 
 <main id="main-content" class="page container">
     <header class="page__hero flow">
-        <h1 class="logo__heading">
-            {{ site.title }}
+        <h1 class="page__heading bleed">
+            <div class="container">
+                {{ title }}
+            </div>
         </h1>
-        <h2>{{ title }}</h2>
         <p class="lead">
             Det här repot samlar ett antal exempel över vanliga webbkomponenter
             och visar hur du kan koda dem. Arbeta dig igenom dina
@@ -31,6 +32,7 @@ layout: layouts/base.njk
                 >pull request</a
             >.
         </p>
+        <p class="lead">Den här sidan är ett komplement till <a href="https://webbutveckling.jensa.xyz">Webbutveckling</a>.</p>
     </header>
     <section class="page__content flow">
         <p>
@@ -68,7 +70,7 @@ layout: layouts/base.njk
         </p>
         <p>
             Alla sidorna innehåller en eller flera övningar för dig att arbeta
-            med.
+            med. <em>Koda</em> och läs.
         </p>
         <p>
             Validera din
@@ -84,5 +86,17 @@ layout: layouts/base.njk
             >.
         </p>
         {% include "components/itemlist.njk" %}
+        <h2>Länkar och annat nyttigt</h2>
+        <p>Här finns det en del läsning kring viktiga koncept och delar av 
+            kurserna webbutveckling. Det är bra material men inte på svenska.
+        </p>
+        <ul>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model" target="_blank">Box modellen</a>
+            </li>
+            <li>
+                <a href="https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/" target="_blank">Semantiska element, fusklapp</a>
+            </li>
+        </ul>
     </section>
 </main>
