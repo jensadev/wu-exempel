@@ -1,4 +1,7 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+// Create a helpful production flag
+const isProduction = process.env.NODE_ENV === 'production';
+
 module.exports = (eleventyConfig) => {
     eleventyConfig.addPlugin(syntaxHighlight);
 
@@ -25,7 +28,7 @@ module.exports = (eleventyConfig) => {
         passthroughFileCopy: true,
         dir: {
             input: 'src',
-            output: 'docs',
+            output: isProduction ? 'docs' : '_site',
         },
     };
 };

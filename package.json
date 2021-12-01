@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch:sass": "sass --watch src/scss:docs/css",
+        "watch:sass": "sass --watch src/scss:_site/css",
         "watch:eleventy": "eleventy --serve",
         "start": "npm-run-all --parallel watch:*",
         "build:sass": "sass --no-source-map src/scss:docs/css",
