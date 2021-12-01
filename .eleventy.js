@@ -9,6 +9,7 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addWatchTarget('./src/js/');
 
     eleventyConfig.addPassthroughCopy('./src/assets/');
+    eleventyConfig.addPassthroughCopy('./src/images/');
     eleventyConfig.addPassthroughCopy('./src/js/');
 
     // Collections
