@@ -3,7 +3,7 @@ title: Navigation
 layout: layouts/example.njk
 ---
 
-<p>Skrot</p>
+<h2>Navbar, responsiv utan javascript</h2>
 <div class="playground">
     {% include "examples/nav-example.njk" %}
 </div>
@@ -31,6 +31,10 @@ layout: layouts/example.njk
     </ul>
 </nav>
 {% endhighlight %}
+<h2>Navbar, med container, responsiv utan javascript</h2>
+<div class="playground">
+    {% include "examples/nav-inner-example.njk" %}
+</div>
 {% highlight "css" %}
 :root {
     --color-light: #f0f0f0;
@@ -117,3 +121,7 @@ layout: layouts/example.njk
     z-index: 1000;
 }
 {% endhighlight %}
+
+<div class="playground">
+    {% include "examples/hamburger-example.njk" %}
+</div>

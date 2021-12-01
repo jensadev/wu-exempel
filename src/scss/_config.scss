@@ -44,6 +44,7 @@ $light-colors: (
     'primary': $color-primary,
     'on-primary': a11y.a11y-color($color-primary, $color-light, 'AAA'),
     'secondary': $color-secondary,
+    'on-secondary': a11y.a11y-color($color-light, $color-secondary, 'AAA'),
     'dark': $color-dark,
     'light': $color-light,
 );
