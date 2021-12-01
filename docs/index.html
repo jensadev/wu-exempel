@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Webbutveckling 1-2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700;900&display=swap"
+            rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet" />
+            <link rel="stylesheet" href="/wu-exempel/css/main.css" />
+        
+        
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Hoppa till sidans innehåll</a>
+        <nav class="navbar" aria-label="Primary">
+    <div class="navbar__inner container">
+        <a class="brand" href="/wu-exempel/">
+            <span class="material-icons"> web </span>
+        </a>
+        <button class="navbar__toggle">
+            <span class="material-icons"> menu </span>
+        </button>
+        <div class="navbar__collapse">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a
+                        class="
+                            nav__link
+                            active
+                        "
+                        href="/wu-exempel/index.html"
+                        >Hem</a
+                    >
+                </li>
+                <li class="nav__item dropdown">
+                    <a class="nav__link--dropdown-toggle" href="#" role="button"
+                        >Exempel</a
+                    >
+                    <ul class="nav dropdown__content">
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/flexbox.html"
+                                >Flexbox</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/visa-och-dolj.html"
+                                >Visa och dölj</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/navigation.html"
+                                >Navigation</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/media-queries.html"
+                                >Media queries</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/knappar.html"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/darkmode.html"
+                                >Darkmode</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/hamburgermeny.html"
+                                >Hamburgermeny</a
+                            >
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const toggle = document.querySelector('.nav__link--dropdown-toggle');
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+    });
+</script>
+<script defer src="/wu-exempel/js/hamburger.js"></script>
+
+        
+<main id="main-content" class="page container">
+    <header class="page__hero flow">
+        <h1 class="page__heading bleed">
+            <div class="container">
+                Webbutveckling 1-2
+            </div>
+        </h1>
+        <h2>Exempel och övningar</h2>
+        <p class="lead">
+            Det här repot samlar ett antal exempel över vanliga webbkomponenter
+            och visar hur du kan koda dem. Arbeta dig igenom dina
+            intresseområden och gör tillhörande övningar, eller hitta det du
+            behöver och använd det.
+        </p>
+        <p class="lead">
+            Repot är ett work in progress och hittar du något som är fel kan du
+            skapa ett
+            <a href="" target="_blank" rel="noopener">issue</a
+            >. Om du förbättrar eller skapar något nytt till sidan så skapa en
+            <a
+                href="/pulls"
+                target="_blank"
+                rel="noopener"
+                >pull request</a
+            >.
+        </p>
+        <p class="lead">
+            Den här sidan är ett komplement till kurswebben, 
+            <a href="https://webbutveckling.jensa.xyz">Webbutveckling.jensa.xyz</a>.
+        </p>
+    </header>
+    <section class="page__content flow">
+        <p>
+            För att köra de exempel som finns på den här sidan kan du antingen
+            bygga alltihopa med
+            <a href="https://www.npmjs.com/" target="_blank" rel="noopener"
+                >npm</a
+            >, kolla på sidan i din webbläsare (som du gör nu) eller klona
+            <a href="" target="_blank" rel="noopener"
+                >repot</a
+            >
+            och öppna exempel med
+            <a
+                href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+                rel="noopener"
+                >Live server</a
+            >
+            från
+            <a
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noopener"
+                >Visual studio code</a
+            >.
+        </p>
+        <p>
+            En del av sidorna innehåller instruktioner för hur du går tillväga
+            för att koda och återskapa dem, men oavsett det så förväntas du
+            inspektera och undersöka källkoden på sidorna. Så öppna
+            utvecklarverktygen i webbläsaren (F12) och se till att
+            <em>Inspektera dokumentet</em>.
+        </p>
+        <p>
+            Alla sidorna innehåller en eller flera övningar för dig att arbeta
+            med. <em>Koda</em> och läs.
+        </p>
+        <p>
+            Validera din
+            <a href="https://validator.nu/" target="_blank" rel="noopener"
+                >HTML</a
+            >
+            och
+            <a
+                href="https://jigsaw.w3.org/css-validator/"
+                target="_blank"
+                rel="noopener"
+                >CSS</a
+            >.
+        </p>
+        <h2>Innehåll</h2>
+<ul>
+    
+    <li>
+        <a href="/wu-exempel/flexbox.html">Flexbox</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/visa-och-dolj.html">Visa och dölj</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/navigation.html">Navigation</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/media-queries.html">Media queries</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/knappar.html">Knappar</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/darkmode.html">Darkmode</a>
+    </li>
+    
+    <li>
+        <a href="/wu-exempel/hamburgermeny.html">Hamburgermeny</a>
+    </li>
+    
+</ul>
+
+        <h2>Länkar och annat nyttigt</h2>
+        <p>
+            Här finns det en del läsning kring viktiga koncept och delar av
+            kurserna webbutveckling. Det är bra material men inte på svenska.
+        </p>
+        <ul>
+            <li>
+                <a
+                    href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model"
+                    target="_blank"
+                    >Box modellen</a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://learn-the-web.algonquindesign.ca/topics/html-semantics-cheat-sheet/"
+                    target="_blank"
+                    >Semantiska element, fusklapp</a
+                >
+            </li>
+        </ul>
+    </section>
+</main>
+
+        <footer class="footer">
+    <div class="footer__inner container text-small">
+        <ul class="footer__list">
+            <li>
+                <a href="https://github.com/jensnti/wu-exempel" style="font-size: 0">
+                    <svg
+                        class="cat"
+                        height="32"
+                        viewBox="0 0 16 16"
+                        version="1.1"
+                        width="32"
+                        aria-hidden="true">
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg
+                    >GitHub repo</a
+                >
+            </li>
+            <li><a href="https://github.com/jensnti/wu-exempel/issues">Problem? GitHub issue</a></li>
+            <li><a href="#">Tillbaka till toppen</a></li>
+        </ul>
+    </div>
+</footer>
+
+    </body>
+</html>
