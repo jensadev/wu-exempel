@@ -3,8 +3,7 @@ title: Flexbox
 layout: layouts/example.njk
 ---
 <link rel="stylesheet" href="{{ '/css/examples/flex-example.css' }}">
-<h2>{{ title }}</h2>
-
+<h2>Layoutens silvertejp</h2>
 <p>Samtliga exempel följer denna grundläggande html konstruktion.</p>
 <p>css klasser används sedan för att lägga till och ta bort stilar, css egenskaper.</p>
 {% highlight "html" %}
@@ -20,7 +19,8 @@ layout: layouts/example.njk
     </div>
 </div>
 {% endhighlight %}
-<p>Värt att nämna är att i varje underliggande div, de med h1 element och siffror så används flex för att centrera texten.</p>
+<p>Värt att nämna är att i varje underliggande div, de med h1 element och siffror
+     så används flex för att centrera texten.</p>
 {% highlight "css" %}
 .flex-container__item {
     display: flex;
@@ -28,23 +28,28 @@ layout: layouts/example.njk
     align-items: center;
   }
 {% endhighlight %}
-<h2>Exempel</h2>
+<h3>Utan flexbox</h3>
 <p>Divar utan flexbox.</p>
 <div class="playground">
     <div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>3</h1>
         </div>
     </div>
 </div>
 
-<p>Divar med flexbox. Flex-direction är default, vilket är row så den staplar innehållet på rad. Fast storlek, 100pixlar.</p>
+<h3>Med flexbox default</h3>
+<p>Här är enbart display:flex satt, så det är standardinställningar. Flex-direction
+     är row som standard, så den placerar
+     innehållet på en rad (horizontell, row). Flex huvud-axel är alltså horizontell i detta exempel.</p>
+     <p>Elementens bredd (width) är, 20%.</p>
+     <p>Det här kan du använda när du vill att element ska placeras brevid varandra.</p>
 {% highlight "css" %}
 .flex-container {
     display: flex;
@@ -52,23 +57,41 @@ layout: layouts/example.njk
 {% endhighlight %}
 <div class="playground">
     <div class="flex-container">
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>3</h1>
         </div>
     </div>
 </div>
-<p>Divar med flexbox. Justify-content för att placera boxarna på raden. 
-    Flex-direction är default, vilket är row så den staplar innehållet på rad. 
-    Fast storlek, 100pixlar.</p>
+<h3>Justify-content</h3>
+<p> Justify-content för att placera boxarna på raden. 
+    Default är flex-start.</p>
 <p>Det finns ett stort antal val för justify-content, öppna utvecklarverktygen i 
     webbläsaren (F12) och testa. Kom ihåg att både justify-content och align-items 
-är beroende av vilken flex-direction som används.</p>
+är beroende av vilken flex-direction som används, alltså flex huvud-axel.</p>
+{% highlight "css" %}
+.flex-container--end {
+    justify-content: flex-end;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--end">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
 {% highlight "css" %}
 .flex-container--space-between {
     justify-content: space-between;
@@ -76,33 +99,80 @@ layout: layouts/example.njk
 {% endhighlight %}
 <div class="playground">
     <div class="flex-container flex-container--space-between">
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item flex-container__item--100">
+        <div class="flex-container__item flex-container__item--20">
             <h1>3</h1>
         </div>
     </div>
 </div>
-<p>Divar med flexbox. Storleken är 100% width.</p>
+
+<h3>Align-items</h3>
+<p>Flex huvud-axel är som standard horizontell, den andra axeln är då vertikal.
+    Align-items är för att placera elementen på axeln.</p>
 <div class="playground">
     <div class="flex-container">
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--height">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--height">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--height">
             <h1>3</h1>
         </div>
     </div>
 </div>
-<p>Divar med flexbox. Direction är satt till colummn, annars är koden som ovan. Storleken är 100% width.</p>
-<p>Testa att flippa direction till row med utvecklarverktygen (F12).</p>
+<p>Precis som för justify-content finns det ett stort antal val för align-items, öppna utvecklarverktygen i 
+    webbläsaren (F12) och testa. Kom ihåg att både justify-content och align-items 
+är beroende av vilken flex-direction som används, alltså flex huvud-axel.</p>
+{% highlight "css" %}
+.flex-container--align-center {
+    align-items: center;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--align-center">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<h3>Flex-direction</h3>
+<p>Med flex direction kan vi ändra vilken riktning flex huvud-axel ska ha, 
+    row eller column. Standard är som tidigare nämnt column.</p>
+{% highlight "css" %}
+.flex-container--row-reverse {
+    flex-direction: row-reverse;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--row-reverse">
+        <div class="flex-container__item flex-container__item--height">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--height">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Flex-direction är row som standard, ändrar vi den till column så staplas 
+    de underliggande elementen på varandra.</p>
+    <p>När du ändrar flex direction så byter justify-content och align-items plats.</p>
 {% highlight "css" %}
 .flex-container--column {
     flex-direction: column;
@@ -110,33 +180,120 @@ layout: layouts/example.njk
 {% endhighlight %}
 <div class="playground">
     <div class="flex-container flex-container--column">
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--height">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item>
+        <div class="flex-container__item flex-container__item--height">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--height">
             <h1>3</h1>
         </div>
     </div>
 </div>
-<p>Divar med flexbox. Flex wrap (default är nowrap)..</p>
+
+<h3>Flex-grow</h3>
+<p>Flex-grow bestämmer hur mycket plats ett element får ta av den container som
+    det ligger i. Standard inställningen är 0. Du kan observera denna funktionalitet 
+i alla tidigare exempel här på sidan.</p>
+<p>Kontrollera detta med flex-grow egenskapen. I det här exemplet så tar nu 
+    element 2 all plats som finns kvar efter att element 1 och 3 fått sin bredd 
+(width) som är 20%.</p>
+{% highlight "css" %}
+.flex-item {
+    flex-grow: 1;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<p>Med flex-grow: 1 på element 1 och 2 så delar dessa två element på den plats som finns 
+    kvar efter att element 3 tagit 20%.
+</p>
+<p>Med flex grown kan du alltså kontrollera vad som händer med den plats som blir över.</p>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+<h3>Flex-wrap</h3>
+<p>Med flex-wrap kontrolleras om innehållet i containern ska byta rad, default 
+    är nowrap. Om du ändrar den till wrap så kommer elementen att byta rad när 
+    innehållet är större än containern. Det är alltså baserat på elementens
+bredd (width).</p>
+</p>
 {% highlight "css" %}
 .flex-container--wrap {
     flex-wrap: wrap;
 }
+.flex-container__item--50 {
+    width: 50%;
+}
 {% endhighlight %}
 <div class="playground">
     <div class="flex-container flex-container--wrap">
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--50">
             <h1>1</h1>
         </div>
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--50">
             <h1>2</h1>
         </div>
-        <div class="flex-container__item">
+        <div class="flex-container__item flex-container__item--50">
             <h1>3</h1>
         </div>
     </div>
 </div>
+
+<h3>Flex-gap</h3>
+<p>Alla dessa exempel är utan margin på element, just margin och padding kan
+    ställa till det eftersom ett elements storlek är baserat på box-modellen (om
+    du inte känner till den så läs på, viktigt!).
+</p>
+<p>Om du önskar en marginal mellan alla element i din flex container så kan du 
+    använda dig av flex-gap.
+</p>
+<p>Det går även utmärkt att använda tillsammans med flex-grow och de andra egenskaperna.</p>
+{% highlight "css" %}
+.flex-container {
+    gap: 1rem;
+}
+{% endhighlight %}
+<div class="playground">
+    <div class="flex-container flex-container--center" style="gap: 1rem;">
+        <div class="flex-container__item flex-container__item--20">
+            <h1>1</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20" style="flex-grow: 1;">
+            <h1>2</h1>
+        </div>
+        <div class="flex-container__item flex-container__item--20">
+            <h1>3</h1>
+        </div>
+    </div>
+</div>
+
+<p>För att styra gap så kan du använda det på row eller column.</p>
+{% highlight "css" %}
+.flex-container {
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+{% endhighlight %}
