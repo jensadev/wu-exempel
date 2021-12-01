@@ -3,6 +3,8 @@ title: Knappar
 layout: layouts/example.njk
 level: 1
 ---
+<link rel="stylesheet" href="{{ site.path + '/css/examples/button-example.css' }}">
+<script defer src="{{ site.path + '/js/examples/button-example.js' }}"></script>
 <p>Knappar eller stilar som ser ut som knappar. En knapp ska inte ha funktionen 
     av en länk, då använder du en länk, men inget hindrar dig från att ge länken
 en knapps stil. </p>
@@ -99,4 +101,3 @@ window.addEventListener('load', (event) => {
     });
 });
 {% endhighlight %}
-<script defer src="/js/examples/button-example.js"></script>
