@@ -3,4 +3,127 @@ title: Localstorage
 layout: layouts/example.njk
 level: 2
 ---
-<p>Kommer!</p>
+<link rel="stylesheet" href="{{ site.path + '/css/examples/button-example.css' }}">
+<script defer src="{{ site.path + '/js/examples/localstorage-example.js' }}"></script>
+
+
+<p>Element för att visa.</p>
+<div class="playground">
+    <h2>Click count: 0</h2>
+</div>
+<p>Knapp för att registrera clicks på en sida.</p>
+<div class="playground">
+    <button class="btn" id="count-button">Click</button>
+</div>
+
+{% highlight "html" %}
+<button class="btn" id="count-button">Click</button>
+{% endhighlight %}
+{% highlight "js" %}
+let count = 0;
+const countButton = document.querySelector('#count-button');
+countButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    count++;
+});
+{% endhighlight %}
+
+<img src="{{ site.path + '/images/ls-dump.png' }}" alt="Localstorage illustration">
+
+<p>Spara clicks i localstorage.</p>
+<div class="playground">
+    <button class="btn" id="save-button">Save clicks</button>
+</div>
+{% highlight "html" %}
+<button class="btn" id="save-button">Save clicks</button>
+{% endhighlight %}
+{% highlight "js" %}
+let count = 0;
+const saveButton = document.querySelector('#save-button');
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('count', count);
+});
+{% endhighlight %}
+
+<p>Flytta clicks till localStorage och ladda den när sidan laddas.</p>
+{% highlight "js" %}
+// let count = 0;
+let count = localStorage.getItem('count') || 0;
+{% endhighlight %}
+
+<p>Nollställa värdet i localStorage.</p>
+<div class="playground">
+    <button class="btn" id="reset-button">Reset clicks</button>
+</div>
+{% highlight "html" %}
+<button class="btn" id="reset-button">Reset clicks</button>
+{% endhighlight %}
+{% highlight "js" %}
+let count = localStorage.getItem('count') || 0;
+const resetButton = document.querySelector('#reset-button');
+resetButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.removeItem('count');
+    count = 0;
+    showCount(count);
+});
+{% endhighlight %}
+
+<p>För att visa antalet clicks, skriv ut count i ett element på sidan. Elementet 
+    finns längst upp på sidan.</p>
+{% highlight "html" %}
+<h2>Click count: 0</h2>
+{% endhighlight %}
+{% highlight "js" %}
+let count = localStorage.getItem('count') || 0;
+const showCount = (c) => {
+    const counterElement = document.querySelector('.playground > h2');
+    counterElement.textContent = `Click count: ${c}`;
+};
+showCount(count);
+{% endhighlight %}
+
+<h2>Hela exemplet</h2>
+<p>Html kod för knapparna och display elementet.</p>
+{% highlight "html" %}
+<h2>Click count: 0</h2>
+<div class="button-container">
+    <button class="btn" id="count-button">Click</button>
+    <button class="btn" id="save-button">Save clicks</button>
+    <button class="btn" id="reset-button">Reset clicks</button>
+</div>
+{% endhighlight %}
+<p>Javascript, kan antingen skrivas direkt i en script tagg eller i separat fil.</p>
+{% highlight "js" %}
+window.addEventListener('load', (event) => {
+    const countButton = document.querySelector('#count-button');
+    const saveButton = document.querySelector('#save-button');
+    const resetButton = document.querySelector('#reset-button');
+
+    let count = localStorage.getItem('count') || 0;
+
+    const showCount = (countValue) => {
+        const counterElement = document.querySelector('.playground > h2');
+        counterElement.textContent = `Click count: ${countValue}`;
+    };
+
+    showCount(count);
+
+    countButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        count++;
+        showCount(count);
+    });
+    saveButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        localStorage.setItem('count', count);
+    });
+    resetButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        localStorage.removeItem('count');
+        count = 0;
+        showCount(count);
+    });
+});
+{% endhighlight %}
