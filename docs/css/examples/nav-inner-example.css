@@ -1,0 +1,19 @@
+.playground .navbar {
+  background-color: var(--color-light);
+}
+.playground .navbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-light);
+  font-size: 1.25rem;
+}
+@media (max-width: 768px) {
+  .playground .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/*# sourceMappingURL=nav-inner-example.css.map */
