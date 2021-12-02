@@ -3,4 +3,137 @@ title: Media queries
 layout: layouts/example.njk
 level: 1
 ---
-<p>Kommer!</p>
+<link rel="stylesheet" href="{{ site.path + '/css/examples/mq-example.css' }}">
+<p>Det här området förutsätter att du har koll på flexbox 💪.</p>
+
+<p>Media queries låter dig anpassa din webbsida efter ett antal parametrar
+    baserat på din användares typ av media och exempelvis webbläsarens fönsterstorlek.
+</p>
+
+<h2>Media type</h2>
+<p>Genom att känna av skärmens typ så kan stilarna anpassas på webbplatsen. Ett 
+    vanligt användningsfall för detta är att anpassa stilen på sidan vid utskrift.
+</p>
+<p>För att ta bort eventuell bakgrundsfärg och sätta kontrasten vid utskrift kan
+    följande css användas. Du kan testa detta genom att trycka ctrl+p i webbläsaren
+    för att komma till utskriftsläget.
+    Den aktiveras genom att media typen är print, villkoret är sant och den 
+    efterföljande css-regeln blir aktiv.
+</p>
+{% highlight "css" %}
+@media print {
+    body { 
+        background-color: white; 
+        color: black; 
+    }
+}
+{% endhighlight %}
+
+<h2>Media feature</h2>
+<p>Det kanske absolut vanligaste användningsfallet för media queries är att göra
+    en webbsida responsiv. En responsiv webbsida ska fungera på olika skärmstorlekar
+    och anpassa innehållet efter skärmens storlek.
+</p>
+<p>Att arbeta responsivt med layouten eller mobil-first är idag ett måste
+    eftersom webben används på väldigt många olika plattformar.
+</p>
+<p>Ett exempel på media queries är den här webbplatsens container klass. Prova att 
+    ändra webbläsarfönstrets bredd.</p>
+
+<h3>Min- och max-width</h3>
+
+<p>Media-queries kan använda min- och max-width som villkor för vilka css-regler 
+    som ska gälla. Det fungerar i praktiken så att en viss uppsättning regler gäller 
+    som grund, men om villkoret (tex. min-width på webbläsarfönstret) är sant
+    så börjar en ny uppsättning regler att gälla.
+</p>
+<p>I exemplet nedan så kommer media queries arbeta med innehållets max-width. I
+    grunden är detta satt till 20rem.
+</p>
+<div class="playground">
+    <div class="flex-container">
+        <div class="flex-container__item">
+            <figure>
+                <img src="{{ site.path + '/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg' }}">
+                <figcaption>Photo by <a href="https://unsplash.com/@gohrhyyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Goh Rhy Yan</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                </figcaption>
+            </figure>
+            <h1>Och söka del, icke.</h1>
+            <p>Löksås ipsum groda söka blev plats denna sin bra ta gör fram hav, se strand när vidsträckt annan där både trevnadens enligt har. Kan kanske kunde kom flera tidigare genom, räv sjö stig rot själv erfarenheter, sig därmed lax ta precis. Erfarenheter det dimma där tid varit räv tiden tid precis när, se flera söka trevnadens ser dimmhöljd vi fram ordningens, häst hela själv kom olika samtidigt precis händer samtidigt.</p>
+        </div>
+    </div>
+</div>
+
+<p>Html-koden för exemplet ser ut som följer.</p>
+
+{% highlight "html" %}
+<div class="flex-container">
+    <div class="flex-container__item">
+        <figure>
+            <img src="{{ site.path + '/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg' }}">
+            <figcaption>Photo by <a href="https://unsplash.com/@gohrhyyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Goh Rhy Yan</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </figcaption>
+        </figure>
+        <h1>Och söka del, icke.</h1>
+        <p>Löksås ipsum groda söka blev plats denna sin bra ta gör fram hav, se strand när vidsträckt annan där både trevnadens enligt har. Kan kanske kunde kom flera tidigare genom, räv sjö stig rot själv erfarenheter, sig därmed lax ta precis. Erfarenheter det dimma där tid varit räv tiden tid precis när, se flera söka trevnadens ser dimmhöljd vi fram ordningens, häst hela själv kom olika samtidigt precis händer samtidigt.</p>
+    </div>
+</div>
+{% endhighlight %}
+
+<p>Css-koden.</p>
+
+{% highlight "css" %}
+.flex-container {
+    display: flex;
+    background-color: var(--color-light);
+}
+.flex-container__item {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    max-width: 20rem;
+}
+.flex-container__item img {
+    width: 100%;
+    max-width: 100%;
+}
+{% endhighlight %}
+
+<p>Media regel, för att anpassa bredden efter en större skärm.</p>
+<p>Det som sker är att om webbläsarfönstret är åtminstone 36rem brett så aktiveras 
+    regeln. Då ändras värdet på max-width till 36rem.
+    Utan regeln så är max-width 20rem för alla upplösningar, men med regeln på plats
+    så ändras max-width för elementet på alla skärmar bredare än 36rem.
+</p>
+{% highlight "css" %}
+@media (min-width: 36rem) {
+    .flex-container__item {
+        max-width: 36rem;
+    }
+}
+{% endhighlight %}
+
+<p>Studera även bilden i exemplet då den visar hur responsivitet kan uppnås på en
+    bild med hjälp av width och max-width, det behövs inte ens media queries.
+</p>
+
+<p>Font size, textens storlek skalar inte med webbläsarfönstrets storlek. Det 
+    kan i vissa fall göra så att din layout bryts, eftersom att texten inte ryms.
+    För att arbeta med detta så kan textens storlek justeras efter skärmens storlek
+    med hjälp av media-regler.
+</p>
+<p>Följande exempel gör detta, notera att villkoret för media-regeln är omvänt.</p>
+{% highlight "css" %}
+.flex-container__item h1 {
+    font-size: 3rem;
+}
+@media (max-width: 36rem) {
+    .flex-container__item h1 {
+        font-size: 1.6rem;
+    }
+}
+{% endhighlight %}
+
+<h2>Responsivitet</h2>
+<p>Media-regler är bara en del av detta.
+</p>
