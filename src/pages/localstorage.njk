@@ -6,85 +6,25 @@ level: 2
 <link rel="stylesheet" href="{{ site.path + '/css/examples/button-example.css' }}">
 <script defer src="{{ site.path + '/js/examples/localstorage-example.js' }}"></script>
 
+<p>För det här exemplet så utgår vi från en html struktur med ett par knappar. 
+    Knapparna går att klicka på för att öka en räknare, men värdet sparas inte
+    mellan sidladdningar.
+    För att spara värdet mellan sidladdningar kan vi använda localStorage. 
+</p>
+<p>LocalStorage är ett inbygg api i webbläsaren som gör det möjligt att spara 
+    data. Datan är sparad lokalt i webbläsaren. </p>
 
-<p>Element för att visa.</p>
+<h2>Exempel</h2>
+
 <div class="playground">
     <h2>Click count: 0</h2>
+    <div class="button-container">
+        <button class="btn" id="count-button">Click</button>
+        <button class="btn" id="save-button">Save clicks</button>
+        <button class="btn" id="reset-button">Reset clicks</button>
+    </div>
 </div>
-<p>Knapp för att registrera clicks på en sida.</p>
-<div class="playground">
-    <button class="btn" id="count-button">Click</button>
-</div>
 
-{% highlight "html" %}
-<button class="btn" id="count-button">Click</button>
-{% endhighlight %}
-{% highlight "js" %}
-let count = 0;
-const countButton = document.querySelector('#count-button');
-countButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    count++;
-});
-{% endhighlight %}
-
-<img src="{{ site.path + '/images/ls-dump.png' }}" alt="Localstorage illustration">
-
-<p>Spara clicks i localstorage.</p>
-<div class="playground">
-    <button class="btn" id="save-button">Save clicks</button>
-</div>
-{% highlight "html" %}
-<button class="btn" id="save-button">Save clicks</button>
-{% endhighlight %}
-{% highlight "js" %}
-let count = 0;
-const saveButton = document.querySelector('#save-button');
-saveButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.setItem('count', count);
-});
-{% endhighlight %}
-
-<p>Flytta clicks till localStorage och ladda den när sidan laddas.</p>
-{% highlight "js" %}
-// let count = 0;
-let count = localStorage.getItem('count') || 0;
-{% endhighlight %}
-
-<p>Nollställa värdet i localStorage.</p>
-<div class="playground">
-    <button class="btn" id="reset-button">Reset clicks</button>
-</div>
-{% highlight "html" %}
-<button class="btn" id="reset-button">Reset clicks</button>
-{% endhighlight %}
-{% highlight "js" %}
-let count = localStorage.getItem('count') || 0;
-const resetButton = document.querySelector('#reset-button');
-resetButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.removeItem('count');
-    count = 0;
-    showCount(count);
-});
-{% endhighlight %}
-
-<p>För att visa antalet clicks, skriv ut count i ett element på sidan. Elementet 
-    finns längst upp på sidan.</p>
-{% highlight "html" %}
-<h2>Click count: 0</h2>
-{% endhighlight %}
-{% highlight "js" %}
-let count = localStorage.getItem('count') || 0;
-const showCount = (c) => {
-    const counterElement = document.querySelector('.playground > h2');
-    counterElement.textContent = `Click count: ${c}`;
-};
-showCount(count);
-{% endhighlight %}
-
-<h2>Hela exemplet</h2>
 <p>Html kod för knapparna och display elementet.</p>
 {% highlight "html" %}
 <h2>Click count: 0</h2>
@@ -94,7 +34,95 @@ showCount(count);
     <button class="btn" id="reset-button">Reset clicks</button>
 </div>
 {% endhighlight %}
-<p>Javascript, kan antingen skrivas direkt i en script tagg eller i separat fil.</p>
+
+<p>Javascript för exemplet. Exemplet kan öka räknaren och nollställa den, men 
+    knappen för att spara värdet gör inget.
+</p>
+{% highlight "js" %}
+window.addEventListener('load', (event) => {
+    const countButton = document.querySelector('#count-button');
+    const saveButton = document.querySelector('#save-button');
+    const resetButton = document.querySelector('#reset-button');
+
+    let count = 0;
+
+    const showCount = (countValue) => {
+        const counterElement = document.querySelector('.playground > h2');
+        counterElement.textContent = `Click count: ${countValue}`;
+    };
+
+    showCount(count);
+
+    countButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        count++;
+        showCount(count);
+    });
+    saveButton.addEventListener('click', (event) => {
+        event.preventDefault();
+    });
+    resetButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        count = 0;
+        showCount(count);
+    });
+});
+{% endhighlight %}
+
+<h2>Localstorage</h2>
+<h3>Spara, setItem</h3>
+<p>För att spara till localStorage så används setItem().</p>
+{% highlight "js" %}
+localStorage.setItem(PARAMETER, VÄRDE);
+{% endhighlight %}
+<p>Uppdatera spara knappen med följande kod för att den ska spara till localStorage.</p>
+{% highlight "js" %}
+saveButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.setItem('count', count);
+});
+{% endhighlight %}
+
+<p>Nu är värdet sparat i localStorage, undersök att det fungerar genom att 
+    inspektera localStorage i webbläsaren. Kontrollera att värdet är sparat 
+    även när du laddar om sidan.
+</p>
+<img src="{{ site.path + '/images/ls-dump.png' }}" alt="Localstorage illustration">
+
+<h3>Hämta, getItem</h3>
+<p>Ladda något från localStorage med getItem(). Kom ihåg att spara det du laddar
+    i en variabel.
+</p>
+{% highlight "js" %}
+localStorage.getItem(PARAMETER);
+{% endhighlight %}
+<p>Uppdatera koden för att ladda count från localStorage.</p>
+{% highlight "js" %}
+let count = localStorage.getItem('count') || 0;
+{% endhighlight %}
+
+<h3>Rensa, removeItem</h3>
+
+<p>Det sista är att rensa localStorage. Det går att rensa hela storage, men att
+    föredra är att ta bort enskilda värden. För att göra detta så används removeItem().
+</p>
+{% highlight "js" %}
+localStorage.removeItem(PARAMETER);
+{% endhighlight %}
+
+<p>Nu kan du uppdatera reset knappen.</p>
+{% highlight "js" %}
+resetButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    localStorage.removeItem('count');
+    count = 0;
+    showCount(count);
+});
+{% endhighlight %}
+
+<h2>Slutgiltig kod</h2>
+
+<p>Den kompletta Javascript koden.</p>
 {% highlight "js" %}
 window.addEventListener('load', (event) => {
     const countButton = document.querySelector('#count-button');

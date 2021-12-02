@@ -1,7 +1,6 @@
 .playground .btn {
   text-align: center;
   text-decoration: none;
-  margin: 0 0.25rem;
   padding: 0.375rem 0.75rem;
   color: var(--color-light);
   background-color: var(--color-dark);
@@ -30,4 +29,7 @@
 }
 .playground .bg-secondary {
   background-color: var(--color-secondary);
+}
+.playground .button-container {
+  margin-top: 1.25rem;
 }
