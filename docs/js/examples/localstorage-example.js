@@ -27,4 +27,16 @@ window.addEventListener('load', (event) => {
         count = 0;
         showCount(count);
     });
+
+    const objectExample = {
+        name: 'Bamse',
+        description: 'När Bamse äter Farmors dunder-honung blir han världens starkaste björn. Han är också världens snällaste björn och hjälper alla som behöver hjälp – vänner som ovänner.',
+        web: 'https://www.bamse.se/bamseskoj/bamse/',
+        age: 55,
+        friends: [
+            'Lille Skutt',
+            'Skalman'
+        ]
+    }
+    localStorage.setItem('exempel', JSON.stringify(objectExample));
 });

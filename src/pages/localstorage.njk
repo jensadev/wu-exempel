@@ -155,3 +155,33 @@ window.addEventListener('load', (event) => {
     });
 });
 {% endhighlight %}
+
+<h2>Mer komplexa objekt</h2>
+<p>Om det som ska sparas i localStorage är av mer komplex karaktär, en array eller 
+    ett objekt till exempel, så kan det sparas som en json sträng.</p>
+<p>Öppna utvecklarverktygen och undersök värdet för exempel. Objektet är sparat som en 
+    JSON sträng. Prova att konvertera det till ett JSON objekt i konsollen.
+</p>
+{% highlight "js" %}
+let exempel = localStorage.getItem('exempel');
+console.log(exempel); // som sträng
+exempel = JSON.parse(exempel);
+console.log(exempel); // som objekt
+{% endhighlight %}
+
+<p>När objektet är parsat med JSON.parse() så kan vi nu arbeta med det och ändra det.</p>
+{% highlight "js" %}
+exempel.type = 'björn';
+exempel.friends.push('Vargen');
+exempel.age = exempel.age + 1; // öka ålder med 1
+console.log(exempel);
+{% endhighlight %}
+
+<p>För att sedan spara objektet så använder du setItem. Men innan det sparas så 
+    måste objektet konverteras till en json sträng med JSON.stringify().
+</p>
+{% highlight "js" %}
+localStorage.setItem('exempel', JSON.stringify(exempel));
+{% endhighlight %}
+
+<p>Öppna nu utvecklarverktygen och studera objektet i applikation -> localStorage -> exempel.</p>
