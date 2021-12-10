@@ -49,16 +49,6 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/knappar.html"
-                                >Knappar</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
                                 href="/wu-exempel/flexbox.html"
                                 >Flexbox</a
                             >
@@ -80,16 +70,6 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/media-queries.html"
-                                >Media queries</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
                                 href="/wu-exempel/navigation.html"
                                 >Navigation</a
                             >
@@ -100,8 +80,18 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/hamburgermeny.html"
-                                >Hamburgermeny</a
+                                href="/wu-exempel/knappar.html"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/media-queries.html"
+                                >Media queries</a
                             >
                         </li>
                         
@@ -112,6 +102,16 @@
                                 "
                                 href="/wu-exempel/darkmode.html"
                                 >Darkmode</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/hamburgermeny.html"
+                                >Hamburgermeny</a
                             >
                         </li>
                         
@@ -183,7 +183,7 @@
     </p>
 </details>
 <details>
-    <summary>Här finns mer att läsa.</summary>
+    <summary><strong>Här finns mer att läsa.</strong></summary>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae alias a
         placeat soluta deleniti consequatur voluptatem nesciunt enim consectetur
@@ -191,6 +191,8 @@
         similique perferendis?
     </p>
 </details>
+
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Visa/dölj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>        Detta är en text som visas när användaren klickar på<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Visa/dölj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>. Default stilarna på detta är tjänliga och<br>        fungerar bra. Men med css kan användbarheten och tydligheten förbättras.<br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span></code></pre>
 
 <h2>Exempel med css</h2>
 <details class="hideshow">
@@ -212,6 +214,11 @@
     </div>
 </details>
 
+<p>Html koden är snarlik den från föregående exmpel. Här används en div som 
+    container och ett par klasser har adderats.
+</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>details</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hideshow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>summary</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hideshow__summary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Visa/dölj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>summary</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hideshow__body<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>            Detta är en text som visas när användaren klickar på<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Visa/dölj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.hideshow</span> <span class="token punctuation">{</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 1rem 0<span class="token punctuation">;</span><br>    <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid <span class="token function">var</span><span class="token punctuation">(</span>--color-grey<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.hideshow__summary</span> <span class="token punctuation">{</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span><br>    <span class="token property">font-weight</span><span class="token punctuation">:</span> 500<span class="token punctuation">;</span><br>    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.hideshow__body</span> <span class="token punctuation">{</span><br>    <span class="token property">padding-top</span><span class="token punctuation">:</span> 0.75rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 <h2>Med javascript</h2>
 <p>Med javascript får du större kontroll över vilka element och hur de visas, men
     priset är mer komplex kod, mer css och javascript. Här är det viktigt att du
@@ -245,6 +252,21 @@
         </div>
     </li>
 </ul>
+
+<p>Strukturen för elementen är nu en lista.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wjs__list flow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wjs__button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            Visa/dölj<br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wjs__content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>                Detta är en text som visas när användaren klickar på<br>                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>Visa/dölj<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>.<br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>Css koden behöver nu en reset på button elementet samt kod för pilarna.
+    Pilarna skapas med hjälp av content parametern i ett pseudo-element, ::before .
+</p>
+<p>För att kunna visa och dölja används en hidden klasse med display:none, som 
+    slås av och på med javascript.
+</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.wjs__button</span> <span class="token punctuation">{</span><br>    <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span><br>    <span class="token property">font-weight</span><span class="token punctuation">:</span> 500<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> inherit<span class="token punctuation">;</span><br>    <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid <span class="token function">var</span><span class="token punctuation">(</span>--color-grey<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">text-align</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.wjs__button::before</span> <span class="token punctuation">{</span><br>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"►"</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.wjs__button--active::before</span> <span class="token punctuation">{</span><br>    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"▼"</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.wjs__content</span> <span class="token punctuation">{</span><br>    <span class="token property">padding-top</span><span class="token punctuation">:</span> 0.75rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.wjs__content--hidden</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Öppna och kolla javascript filen för att se kommentarer kring dess funktion.</p>
+<p>Scriptet itererar över elementen så att scriptet anpassar sig efter antalet
+    element.
+</p>
+<pre class="language-js"><code class="language-js">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'load'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>    <span class="token keyword">const</span> buttons <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.wjs__button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">const</span> contents <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.wjs__content'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    contents<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">content</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        content<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">'wjs__content--hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    buttons<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">button<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>        button<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><br>            e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>            e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>nextElementSibling<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">'wjs__content--hidden'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>            e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">toggle</span><span class="token punctuation">(</span><span class="token string">'wjs__button--active'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </div>
     </section>
 </main>
