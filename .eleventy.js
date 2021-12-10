@@ -1,4 +1,5 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const glob = require('fast-glob');
 // Create a helpful production flag
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -11,6 +12,14 @@ module.exports = (eleventyConfig) => {
     eleventyConfig.addPassthroughCopy('./src/assets/');
     eleventyConfig.addPassthroughCopy('./src/images/');
     eleventyConfig.addPassthroughCopy('./src/js/');
+
+    // Filters
+    glob.sync(['src/filters/*.js']).forEach((file) => {
+        let filters = require('./' + file);
+        Object.keys(filters).forEach((name) =>
+            eleventyConfig.addFilter(name, filters[name])
+        );
+    });
 
     // Collections
     eleventyConfig.addCollection('pages', (collectionApi) => {
