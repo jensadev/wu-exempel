@@ -1,0 +1,14 @@
+{% if updates.items %}
+    {% set latest = updates.items.slice(0,2) %}
+    <header>
+        <h2>Senaste uppdateringar</h2>
+        <ol class="updates__list">
+            {% for item in latest %}
+                <li>
+                    <time datetime="{{ item.date | htmlDateString }}">{{ item.date | readableDate }}</time>
+                     - {{ item.text }}
+                </li>
+            {% endfor %}
+        </ol>
+    </header>
+{% endif %}
