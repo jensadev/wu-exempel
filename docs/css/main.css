@@ -342,7 +342,7 @@ h3 {
   background-color: var(--color-bg);
   box-shadow: 0px 8px 16px 0px var(--color-shadow);
 }
-.dropdown:hover .dropdown__content {
+.dropdown:hover .dropdown__content, .dropdown:focus .dropdown__content, .dropdown:active .dropdown__content, .dropdown:focus-within .dropdown__content {
   display: flex;
   flex-direction: column;
 }
@@ -352,6 +352,9 @@ h3 {
 }
 .dropdown__item:hover {
   box-shadow: 0px 2px 4px 0px var(--color-shadow);
+}
+.dropdown__item a {
+  display: block;
 }
 
 .playground {
