@@ -1,5 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const glob = require('fast-glob');
+const fs = require('fs');
 // Create a helpful production flag
 const isProduction = process.env.NODE_ENV === 'production';
 
