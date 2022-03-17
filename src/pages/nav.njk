@@ -5,6 +5,21 @@ level: 1
 ---
 <link rel="stylesheet" href="{{ site.path + '/css/examples/nav-example.css' }}">
 <h2>Navbar, responsiv utan javascript</h2>
+<p>Detta är ett exempel på en navigation/meny som är lika bred som webbläsarfönstret.
+    Menyn är responsiv och på skärmar med width mindre än 768px ändras 
+    <code>flex-direction</code> till <code>column</code> istället för <code>row</code>.
+</p>
+<p><code>nav</code> elementet med klassen <code>.navbar</code> är själva navbaren. 
+    Länkarna som utgör navigationen är samlade i en lista med klassen <code>.nav</code>.
+    Om du inte behöver en dropdown i din meny så kan du ta bort de delarna.
+</p>
+<p>Med brand menas en logotyp eller ett namn i text. Du ersätter alltså texten
+    med en bild om du använder en logotyp.
+</p>
+<p>Om du önskar en meny som linjerar med resten av sidan behöver du skapa en container
+    i navbaren för innehållet. Du behöver då justera <code>.navbar</code> klassen. 
+    Du kan se undersöka det om du inspekterar navigationen på den här sidan.
+</p>
 <div class="playground">
     {% include "examples/nav-example.njk" %}
 </div>
@@ -98,11 +113,11 @@ level: 1
     flex-direction: column;
 }
 @media (max-width: 768px) {
-    .navbar-example {
+    .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
-    .navbar-example .nav {
+    .navbar .nav {
         flex-direction: column;
     }
     .nav-item:first-child {
@@ -110,7 +125,8 @@ level: 1
     }
 }
 {% endhighlight %}
-    <p>För en navbar som är sticky så kan följande klass läggas till.</p>
+<p>För en navbar som är sticky (sitter fast i sidans top vid scroll) så kan 
+    du lägga till följande klass på <code>nav</code> elementet.</p>
 {% highlight "css" %}
 .fixed-top {
     position: fixed;

@@ -10,6 +10,10 @@ level: 1
     baserat på din användares typ av media och exempelvis webbläsarens fönsterstorlek.
 </p>
 
+<p>Den här sidan visar dig hur du skapar en <code>.container</code> klass att 
+återanvända i dina projekt. Du kan inspektera den här sidan med 
+utvecklarverktygen (F12) för att se hur det används.</p>
+
 <h2>Media type</h2>
 <p>Genom att känna av skärmens typ så kan stilarna anpassas på webbplatsen. Ett 
     vanligt användningsfall för detta är att anpassa stilen på sidan vid utskrift.
@@ -48,11 +52,13 @@ level: 1
     så börjar en ny uppsättning regler att gälla.
 </p>
 <p>I exemplet nedan så kommer media queries arbeta med innehållets max-width. I
-    grunden är detta satt till 20rem.
+    grunden är detta satt till 20rem. Om du kopierar följande exempel behöver du 
+    antingen media regeln som finns <a href="#regeln">längre ned på sidan</a> (fortsätt läsa) eller
+    ändra värdet för max-width.
 </p>
 <div class="playground">
-    <div class="flex-container">
-        <div class="flex-container__item">
+    <div class="container">
+        <div class="container__item">
             <figure>
                 <img src="{{ site.path + '/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg' }}">
                 <figcaption>Photo by <a href="https://unsplash.com/@gohrhyyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Goh Rhy Yan</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -67,8 +73,8 @@ level: 1
 <p>Html-koden för exemplet ser ut som följer.</p>
 
 {% highlight "html" %}
-<div class="flex-container">
-    <div class="flex-container__item">
+<div class="container">
+    <div class="container__item">
         <figure>
             <img src="{{ site.path + '/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg' }}">
             <figcaption>Photo by <a href="https://unsplash.com/@gohrhyyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Goh Rhy Yan</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -83,23 +89,23 @@ level: 1
 <p>Css-koden.</p>
 
 {% highlight "css" %}
-.flex-container {
+.container {
     display: flex;
     background-color: var(--color-light);
 }
-.flex-container__item {
+.container__item {
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
     max-width: 20rem;
 }
-.flex-container__item img {
+.container__item img {
     width: 100%;
     max-width: 100%;
 }
 {% endhighlight %}
 
-<p>Media regel, för att anpassa bredden efter en större skärm.</p>
+<p id="regeln">Media regel, för att anpassa bredden efter en större skärm.</p>
 <p>Det som sker är att om webbläsarfönstret är åtminstone 36rem brett så aktiveras 
     regeln. Då ändras värdet på max-width till 36rem.
     Utan regeln så är max-width 20rem för alla upplösningar, men med regeln på plats
@@ -107,7 +113,7 @@ level: 1
 </p>
 {% highlight "css" %}
 @media (min-width: 36rem) {
-    .flex-container__item {
+    .container__item {
         max-width: 36rem;
     }
 }
@@ -124,11 +130,11 @@ level: 1
 </p>
 <p>Följande exempel gör detta, notera att villkoret för media-regeln är omvänt.</p>
 {% highlight "css" %}
-.flex-container__item h1 {
+.container__item h1 {
     font-size: 3rem;
 }
 @media (max-width: 36rem) {
-    .flex-container__item h1 {
+    .container__item h1 {
         font-size: 1.6rem;
     }
 }

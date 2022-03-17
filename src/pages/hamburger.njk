@@ -1,0 +1,148 @@
+---
+title: Hamburgermeny
+layout: layouts/example.njk
+level: 1
+---
+<p>Den meny som oftast, men inte alltid, komprimeras ned till en menyknapp på mindre
+    skärmar kallas populärt för en hamburgermeny. Den representeras oftast av en 
+    ikon som kan liknas vid en hamburgare 🍔, <span class="material-icons"> menu </span>.
+</p>
+<p>Hamburgermenyn är ett samspel av css och javascript. Var medveten om att det 
+    snabbt blir mer komplext och ska du använda exemplet från den här sidan bör 
+    du först förstå menyn i avsnittet <a href="/navigation">navigation</a>.
+</p>
+<h2>Hamburgermeny, responsiv med javascript</h2>
+<p>Resiza browserfönstret eller öppna utvecklarverktygen (F12) och välj responsivt läge. 
+    Menyn syns på upplösningar med en width under 768px.</p>
+<div class="playground">
+    {% include "examples/hamburger-example.njk" %}
+</div>
+
+<h3>html</h3>
+<p>Detta är en redigerad version av <a href="/navigation">navigations-exemplet</a>, 
+    utan dropdown.</p>
+<p>I koden så finner du ett <code>button</code> element med klassen 
+    <code>.navbar__toggle</code> för att öppna och stänga menyn. Denna knapp
+    är enbart synlig vid en width under 768px.</p>
+<p>Menyns innehåll är samlade i en div med klassen <code>.navbar_collapse</code>. Detta är för 
+    att kunna styra om den ska visas eller inte. Om menyn ska visas så används klassen
+    <code>.navbar__collapse-show</code>, detta styrs med javascript.
+</p>
+{% highlight "html" %}
+<nav class="navbar">
+    <a class="brand" href="#">Brand</a>
+    <button class="navbar__toggle">
+        <span class="material-icons"> menu </span>
+    </button>
+    <div class="navbar__collapse">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Hem</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Länk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Länk</a>
+            </li>     
+        </ul>
+    </div>
+</nav>
+{% endhighlight %}
+<h3>css</h3>
+<p>Detta är en redigerad version av den css som används i 
+<a href="/navigation">navigations-exemplet</a>. Klasserna för <code>.nav</code> saknas och 
+behöver hämtas från den sidan.</p>
+<p>Det som skiljer sig är de nya klasserna för collapse och show. Det har även 
+    tillkommit ett par medieregler för att justera funktionen.
+</p>
+{% highlight "css" %}
+:root {
+    --color-light: #f0f0f0;
+    --color-dark: #212121;
+    --color-shadow: rgba(33, 33, 33, 0.2);
+    --color-secondary:#4a0080;
+}
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-light);
+    font-size: 1.25rem;
+}
+.navbar__collapse-show {
+    display: block;
+    width: 100%;
+}
+.navbar__toggle {
+    border: none;
+    background-color: transparent;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    .navbar__collapse {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .navbar__toggle {
+        display: none;
+    }
+}
+{% endhighlight %}
+<h3>javascript</h3>
+<p>Detta javascript innehåller koden som gör att hamburgermeny-knappen fungerar.
+    Scriptet skapar en listener för click på knappen. Om knappen klickas så 
+    togglas (läggs till eller tas bort) klassen <code>.navbar__collapse-show</code> på 
+    <code>.navbar_collapse</code> elementet.
+</p>
+<p>Om du ska ändra på något i html, css eller javascriptet så är det viktigt att du
+    har koll på klassnamnen, för det är så alla element identifieras.
+</p>
+{% highlight "js" %}
+window.addEventListener('load', (event) => {
+    // Queryselector används för att hämta collapse elementet med dess klassnamn
+    const collapse = document.querySelector('.navbar__collapse');
+    
+    // Queryselector används för att hämta button elementet med dess klassnamn
+    const button = document.querySelector('.navbar__toggle');
+    
+    // när knappen trycks vill vi att vår kod ska köras
+    // addEventListener används för att lägga till en eventlistener
+    // som lyssnar efter tryck på denna knapp
+    button.addEventListener('click', () => {
+        // collapse är variabeln som innehåller referensen till collapse elementet
+        // med toggle så kan vi slå av och på klassnamn för den
+        collapse.classList.toggle('navbar__collapse-show');
+    }, false);
+
+    // följande kod lyssnar efter en resize på webbläsarfönstret
+    // detta för att kolla om hamburgermenyn ska visas eller inte
+    const mql = window.matchMedia('(max-width: 768px)');
+    mql.addEventListener('change', (e) => {
+        if (!e.matches && collapse.classList[1] == 'navbar__collapse-show') {
+            collapse.classList.toggle('navbar__collapse-show');
+        }
+    })
+});
+{% endhighlight %}
+
+<p>Följande länkar innehåller mer läsning kring javascriptet för att hjälpa dig förstå
+    koden.
+</p>
+<ul>
+    <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector">CSS Selektorer</a>
+    </li>
+    <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector">Queryselector</a>
+    </li>
+    <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">Addeventlistener</a>
+    </li>
+    <li>
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">Classlist</a>
+    </li>
+</ul>

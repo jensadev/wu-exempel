@@ -34,7 +34,7 @@
                         class="
                             nav__link
                         "
-                        href="/wu-exempel/index.html"
+                        href="/wu-exempel/"
                         >Hem</a
                     >
                 </li>
@@ -49,17 +49,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/knappar.html"
-                                >Knappar</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
-                                href="/wu-exempel/flexbox.html"
+                                href="/wu-exempel/flexbox/"
                                 >Flexbox</a
                             >
                         </li>
@@ -69,7 +59,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/visa-och-dolj.html"
+                                href="/wu-exempel/visa-och-dolj/"
                                 >Visa och dölj</a
                             >
                         </li>
@@ -78,19 +68,8 @@
                             <a
                                 class="
                                     nav__link
-                                    active
                                 "
-                                href="/wu-exempel/media-queries.html"
-                                >Media queries</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
-                                href="/wu-exempel/navigation.html"
+                                href="/wu-exempel/navigation/"
                                 >Navigation</a
                             >
                         </li>
@@ -100,7 +79,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/hamburgermeny.html"
+                                href="/wu-exempel/hamburgermeny/"
                                 >Hamburgermeny</a
                             >
                         </li>
@@ -110,7 +89,38 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/darkmode.html"
+                                href="/wu-exempel/knappar/"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                    active
+                                "
+                                href="/wu-exempel/media-queries/"
+                                >Media queries</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/css-variabler/"
+                                >CSS variabler</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/darkmode/"
                                 >Darkmode</a
                             >
                         </li>
@@ -120,7 +130,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/localstorage.html"
+                                href="/wu-exempel/localstorage/"
                                 >Localstorage</a
                             >
                         </li>
@@ -165,6 +175,10 @@
     baserat på din användares typ av media och exempelvis webbläsarens fönsterstorlek.
 </p>
 
+<p>Den här sidan visar dig hur du skapar en <code>.container</code> klass att 
+återanvända i dina projekt. Du kan inspektera den här sidan med 
+utvecklarverktygen (F12) för att se hur det används.</p>
+
 <h2>Media type</h2>
 <p>Genom att känna av skärmens typ så kan stilarna anpassas på webbplatsen. Ett 
     vanligt användningsfall för detta är att anpassa stilen på sidan vid utskrift.
@@ -196,11 +210,13 @@
     så börjar en ny uppsättning regler att gälla.
 </p>
 <p>I exemplet nedan så kommer media queries arbeta med innehållets max-width. I
-    grunden är detta satt till 20rem.
+    grunden är detta satt till 20rem. Om du kopierar följande exempel behöver du 
+    antingen media regeln som finns <a href="#regeln">längre ned på sidan</a> (fortsätt läsa) eller
+    ändra värdet för max-width.
 </p>
 <div class="playground">
-    <div class="flex-container">
-        <div class="flex-container__item">
+    <div class="container">
+        <div class="container__item">
             <figure>
                 <img src="/wu-exempel/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg">
                 <figcaption>Photo by <a href="https://unsplash.com/@gohrhyyan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Goh Rhy Yan</a> on <a href="https://unsplash.com/s/photos/onion?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -214,19 +230,19 @@
 
 <p>Html-koden för exemplet ser ut som följer.</p>
 
-<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>flex-container__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/wu-exempel/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>Photo by <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unsplash.com/@gohrhyyan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Goh Rhy Yan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> on <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unsplash.com/s/photos/onion?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Unsplash<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Och söka del, icke.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Löksås ipsum groda söka blev plats denna sin bra ta gör fram hav, se strand när vidsträckt annan där både trevnadens enligt har. Kan kanske kunde kom flera tidigare genom, räv sjö stig rot själv erfarenheter, sig därmed lax ta precis. Erfarenheter det dimma där tid varit räv tiden tid precis när, se flera söka trevnadens ser dimmhöljd vi fram ordningens, häst hela själv kom olika samtidigt precis händer samtidigt.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container__item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/wu-exempel/images/goh-rhy-yan-CCxWLAx0qmk-unsplash.jpg<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>Photo by <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unsplash.com/@gohrhyyan?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Goh Rhy Yan<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span> on <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unsplash.com/s/photos/onion?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Unsplash<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><br>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Och söka del, icke.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Löksås ipsum groda söka blev plats denna sin bra ta gör fram hav, se strand när vidsträckt annan där både trevnadens enligt har. Kan kanske kunde kom flera tidigare genom, räv sjö stig rot själv erfarenheter, sig därmed lax ta precis. Erfarenheter det dimma där tid varit räv tiden tid precis när, se flera söka trevnadens ser dimmhöljd vi fram ordningens, häst hela själv kom olika samtidigt precis händer samtidigt.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 
 <p>Css-koden.</p>
 
-<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.flex-container__item</span> <span class="token punctuation">{</span><br>    <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span><br>    <span class="token property">margin-right</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>    <span class="token property">max-width</span><span class="token punctuation">:</span> 20rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.flex-container__item img</span> <span class="token punctuation">{</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.container__item</span> <span class="token punctuation">{</span><br>    <span class="token property">margin-left</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span><br>    <span class="token property">margin-right</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>    <span class="token property">max-width</span><span class="token punctuation">:</span> 20rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.container__item img</span> <span class="token punctuation">{</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br>    <span class="token property">max-width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
 
-<p>Media regel, för att anpassa bredden efter en större skärm.</p>
+<p id="regeln">Media regel, för att anpassa bredden efter en större skärm.</p>
 <p>Det som sker är att om webbläsarfönstret är åtminstone 36rem brett så aktiveras 
     regeln. Då ändras värdet på max-width till 36rem.
     Utan regeln så är max-width 20rem för alla upplösningar, men med regeln på plats
     så ändras max-width för elementet på alla skärmar bredare än 36rem.
 </p>
-<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.flex-container__item</span> <span class="token punctuation">{</span><br>        <span class="token property">max-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.container__item</span> <span class="token punctuation">{</span><br>        <span class="token property">max-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
 <p>Studera även bilden i exemplet då den visar hur responsivitet kan uppnås på en
     bild med hjälp av width och max-width, det behövs inte ens media queries.
@@ -238,7 +254,7 @@
     med hjälp av media-regler.
 </p>
 <p>Följande exempel gör detta, notera att villkoret för media-regeln är omvänt.</p>
-<pre class="language-css"><code class="language-css"><span class="token selector">.flex-container__item h1</span> <span class="token punctuation">{</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.flex-container__item h1</span> <span class="token punctuation">{</span><br>        <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6rem<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container__item h1</span> <span class="token punctuation">{</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 36rem<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.container__item h1</span> <span class="token punctuation">{</span><br>        <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6rem<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 
 <h2>Responsivitet</h2>
 <p>Media-regler är bara en del av detta.

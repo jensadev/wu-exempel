@@ -1,5 +1,6 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const glob = require('fast-glob');
+const fs = require('fs');
 // Create a helpful production flag
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -39,7 +40,7 @@ module.exports = (eleventyConfig) => {
         callbacks: {
             ready: (err, bs) => {
                 bs.addMiddleware('*', (req, res) => {
-                    const content_404 = fs.readFileSync('docs/404.html');
+                    const content_404 = fs.readFileSync(`${isProduction ? 'docs' : '_site'}/404.html`);	
                     // Add 404 http status code in request header.
                     res.writeHead(404, {
                         'Content-Type': 'text/html; charset=UTF-8',

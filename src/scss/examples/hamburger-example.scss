@@ -1,0 +1,69 @@
+@use "sass:map";
+@use "../config" as config;
+
+.playground {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem;
+        background-color: var(--color-light);
+        font-size: 1.25rem;
+        @media (max-width: 768px) {
+            justify-content: space-between;
+        }
+        &__collapse {
+            @media (max-width: map.get(config.$breakpoints, "md")) {
+                display: none;
+            }
+            &-show {
+                display: block;
+                width: 100%;
+              }
+        }
+        &__toggle {
+            border: none;
+            background-color: transparent;
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+
+    .nav {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    .nav-item {
+        padding-right: 1rem;
+        &:first-child {
+            padding-left: 1rem;
+            @media (max-width: 768px) {
+                padding-left: 0rem;
+            }
+        }
+    }
+    .brand {
+        white-space: nowrap;
+    }
+    .nav-link,
+    .brand {
+        color: var(--color-secondary);
+    }
+    .nav-link:hover,
+    .brand:hover {
+        text-decoration: none;
+        color: var(--color-dark);
+    }
+    .active {
+        color: var(--color-dark);
+    }
+}

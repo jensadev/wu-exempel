@@ -1,0 +1,23 @@
+---
+title: CSS variabler
+layout: layouts/example.njk
+level: 1
+---
+<p>Vad är det här för tokigheter?</p>
+<p>Deklarera</p>
+{% highlight "css" %}
+:root {
+    --color-light: #f0f0f0;
+    --color-dark: #212121;
+    --color-shadow: rgba(33, 33, 33, 0.2);
+    --color-secondary:#4a0080;
+}
+{% endhighlight %}
+
+<p>Använd dem i din css.</p>
+{% highlight "css" %}
+.container {
+    display: flex;
+    background-color: var(--color-light);
+}
+{% endhighlight %}

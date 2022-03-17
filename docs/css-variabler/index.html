@@ -34,7 +34,7 @@
                         class="
                             nav__link
                         "
-                        href="/wu-exempel/index.html"
+                        href="/wu-exempel/"
                         >Hem</a
                     >
                 </li>
@@ -49,17 +49,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/knappar.html"
-                                >Knappar</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
-                                href="/wu-exempel/flexbox.html"
+                                href="/wu-exempel/flexbox/"
                                 >Flexbox</a
                             >
                         </li>
@@ -69,7 +59,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/visa-och-dolj.html"
+                                href="/wu-exempel/visa-och-dolj/"
                                 >Visa och dölj</a
                             >
                         </li>
@@ -79,17 +69,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/media-queries.html"
-                                >Media queries</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
-                                href="/wu-exempel/navigation.html"
+                                href="/wu-exempel/navigation/"
                                 >Navigation</a
                             >
                         </li>
@@ -99,8 +79,28 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/hamburgermeny.html"
+                                href="/wu-exempel/hamburgermeny/"
                                 >Hamburgermeny</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/knappar/"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/media-queries/"
+                                >Media queries</a
                             >
                         </li>
                         
@@ -110,7 +110,17 @@
                                     nav__link
                                     active
                                 "
-                                href="/wu-exempel/darkmode.html"
+                                href="/wu-exempel/css-variabler/"
+                                >CSS variabler</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
+                                href="/wu-exempel/darkmode/"
                                 >Darkmode</a
                             >
                         </li>
@@ -120,7 +130,7 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/localstorage.html"
+                                href="/wu-exempel/localstorage/"
                                 >Localstorage</a
                             >
                         </li>
@@ -153,12 +163,17 @@
     <header class="page__hero flow">
         <h1 class="page__heading bleed">
             <div class="container">
-                Darkmode
+                CSS variabler
             </div>
         </h1>
     </header>
     <section class="page__content flow">
-        <p>Kommer!</p>
+        <p>Vad är det här för tokigheter?</p>
+<p>Deklarera</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--color-light</span><span class="token punctuation">:</span> #f0f0f0<span class="token punctuation">;</span><br>    <span class="token property">--color-dark</span><span class="token punctuation">:</span> #212121<span class="token punctuation">;</span><br>    <span class="token property">--color-shadow</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">--color-secondary</span><span class="token punctuation">:</span>#4a0080<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+
+<p>Använd dem i din css.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
     </section>
 </main>
 

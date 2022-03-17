@@ -1,21 +1,19 @@
-<link rel="stylesheet" href="{{ site.path + '/css/examples/nav-example.css' }}">
+<link rel="stylesheet" href="{{ site.path + '/css/examples/hamburger-example.css' }}">
 <nav class="navbar">
     <a class="brand" href="#">Brand</a>
-    <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Hem</a></li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#">Navigation</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#">Dropdown</a>
-            <ul class="nav dropdown-content">
-                <li class="dropdown-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="dropdown-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+    <button class="navbar__toggle">
+        <span class="material-icons"> menu </span>
+    </button>
+    <div class="navbar__collapse">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Hem</a></li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Länk</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Länk</a>
+            </li>     
+        </ul>
+    </div>
 </nav>
+<script defer src="{{ site.path + '/js/examples/hamburger-example.js' }}"></script>
