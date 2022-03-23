@@ -49,6 +49,16 @@
                                 class="
                                     nav__link
                                 "
+                                href="/wu-exempel/knappar/"
+                                >Knappar</a
+                            >
+                        </li>
+                        
+                        <li class="dropdown__item">
+                            <a
+                                class="
+                                    nav__link
+                                "
                                 href="/wu-exempel/flexbox/"
                                 >Flexbox</a
                             >
@@ -69,8 +79,8 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/navigation/"
-                                >Navigation</a
+                                href="/wu-exempel/css-variabler/"
+                                >CSS variabler</a
                             >
                         </li>
                         
@@ -90,16 +100,6 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/knappar/"
-                                >Knappar</a
-                            >
-                        </li>
-                        
-                        <li class="dropdown__item">
-                            <a
-                                class="
-                                    nav__link
-                                "
                                 href="/wu-exempel/media-queries/"
                                 >Media queries</a
                             >
@@ -110,8 +110,8 @@
                                 class="
                                     nav__link
                                 "
-                                href="/wu-exempel/css-variabler/"
-                                >CSS variabler</a
+                                href="/wu-exempel/navigation/"
+                                >Navigation</a
                             >
                         </li>
                         
@@ -220,7 +220,7 @@ behöver hämtas från den sidan.</p>
 <p>Det som skiljer sig är de nya klasserna för collapse och show. Det har även 
     tillkommit ett par medieregler för att justera funktionen.
 </p>
-<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--color-light</span><span class="token punctuation">:</span> #f0f0f0<span class="token punctuation">;</span><br>    <span class="token property">--color-dark</span><span class="token punctuation">:</span> #212121<span class="token punctuation">;</span><br>    <span class="token property">--color-shadow</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">--color-secondary</span><span class="token punctuation">:</span>#4a0080<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span><br>    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar__collapse-show</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar__toggle</span> <span class="token punctuation">{</span><br>    <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.navbar</span> <span class="token punctuation">{</span><br>        <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.navbar__collapse</span> <span class="token punctuation">{</span><br>        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.navbar__toggle</span> <span class="token punctuation">{</span><br>        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span><br>    <span class="token property">--color-light</span><span class="token punctuation">:</span> #f0f0f0<span class="token punctuation">;</span><br>    <span class="token property">--color-dark</span><span class="token punctuation">:</span> #212121<span class="token punctuation">;</span><br>    <span class="token property">--color-shadow</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 33<span class="token punctuation">,</span> 0.2<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">--color-secondary</span><span class="token punctuation">:</span>#4a0080<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span><br>    <span class="token property">flex-wrap</span><span class="token punctuation">:</span> wrap<span class="token punctuation">;</span><br>    <span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span><br>    <span class="token property">padding</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--color-light<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.25rem<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar__collapse-show</span> <span class="token punctuation">{</span><br>    <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span><br>    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token selector">.navbar__toggle</span> <span class="token punctuation">{</span><br>    <span class="token property">border</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token property">background-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.navbar</span> <span class="token punctuation">{</span><br>        <span class="token property">justify-content</span><span class="token punctuation">:</span> space-between<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token selector">.navbar__collapse</span> <span class="token punctuation">{</span><br>        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span><br>    <span class="token selector">.navbar__toggle</span> <span class="token punctuation">{</span><br>        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
 <h3>javascript</h3>
 <p>Detta javascript innehåller koden som gör att hamburgermeny-knappen fungerar.
     Scriptet skapar en listener för click på knappen. Om knappen klickas så 
